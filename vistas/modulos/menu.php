@@ -76,12 +76,7 @@ GoMercadito Abigail Villanueva Tlazalo
 			</li>
 			<li>
 
-			<a href="datos">
-
-				<i class="fa fa-product-hunt"></i>
-				<span>Mis Dietas</span>
-
-			</a>
+		
 
 		</li>'
 			;
@@ -158,13 +153,13 @@ Clínico
 
 
 
-<button class="btn btn-primary btn-xs btn-block" data-toggle="modal" data-target="#modalAgregarCliente">
+<button class="btn btn-primary btn-xs btn-block" data-toggle="modal" data-target="#SignosVitales">
           
 Signos Vitales
 
 </button>
 
-<button class="btn btn-primary btn-xs btn-block" data-toggle="modal" data-target="#modalAgregarCliente">
+<button class="btn btn-primary btn-xs btn-block" data-toggle="modal" data-target="#SignosVitales">
           
 Dietas
 
@@ -3297,13 +3292,66 @@ Clinico
 <label class="custom-control-label" for="defaultUnchecked">Antecedentes de Infarto</label>
 
 
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp
 <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Antecedentes de Infarto</label>
+<label class="custom-control-label" for="defaultUnchecked">Ateroesclerosis</label>
 
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Cardiomegalia</label>
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Dolor Precordial</label>
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Flebodimia</label>
+
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Hipercolesterolemia</label>
+
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Hipertrigliceridemia</label>
+
+
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Hipotension</label>
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Hipertension</label>
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Taquicardia</label>
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Insuficiencia Cardiaca</label>
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Arritmias</label>
 
 
 	</div>
+<br>
+
+	<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
+
+			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Otro" required>
+
+			</div>
 	<br>
 
 
@@ -3311,7 +3359,7 @@ Clinico
 
 <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-<h4 class="modal-title">Síntomas de Hipercalemia</h4>
+<h4 class="modal-title">Sistema Digestivo</h4>
 
 </div>
 
@@ -3323,46 +3371,401 @@ Clinico
 
 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
 <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Temblores</label>
+<label class="custom-control-label" for="defaultUnchecked">Acidez estomacal</label>
 
  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp&nbsp
 <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Debilidad Muscular</label>
+<label class="custom-control-label" for="defaultUnchecked">Colitis</label>
 
 
 &nbsp &nbsp &nbsp&nbsp&nbsp
 <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Disnea</label>
+<label class="custom-control-label" for="defaultUnchecked">Colon irritable</label>
 
 <br>
 
 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp&nbsp &nbsp 
 <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Biadicardia</label>
+<label class="custom-control-label" for="defaultUnchecked">Diarrea</label>
 
 
 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
 <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Arritmia</label>
+<label class="custom-control-label" for="defaultUnchecked">Distensión abdominal</label>
 
 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp
 <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Náuseas</label>
+<label class="custom-control-label" for="defaultUnchecked">Dolor de abdomen</label>
 
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Estreñimiento</label>
+ 
 
-<br>
 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
 <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Pulso Lento</label>
+<label class="custom-control-label" for="defaultUnchecked">Gastritis</label>
+
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Hemorroides</label>
+
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Nauseas</label>
+
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Reflujo Gastroesofágico</label>}
+
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Ulceras</label>
+
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Vómito</label>
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Enfermedad de Crohn</label>
+
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Intestino Corto</label>
+
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Ulcera peptica</label>
+
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Hernia de Hiato</label>
+
+<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
+
+			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Otro" required>
+
+			</div>
 
 	</div>
 
+	<div class="modal-header" style="background:#3c8dbc; color:white">
+
+<button type="button" class="close" data-dismiss="modal">&times;</button>
+
+<h4 class="modal-title">Boca</h4>
+
+</div>
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Cicatrises Angulares</label>
 
 
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Edema de Lengua</label>
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Esmalte Moteado</label>
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Encias inflamadas hemorragias</label>
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Encias inflamadas hemorragias</label>
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Estomatitis</label>
+
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Glositis</label>
+
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Lengua Magenta</label>
+
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Papilas Filiformes atróficas</label>
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Problemas de eglución</label>
+
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Problemas de Masticación</label>
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Problemas de Salivación</label>
+
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Quelosis</label>
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Uso de Placa Dental</label>
+
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Falta de Piezas Dentales</label>
+
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Candiadisis Oral</label>
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Aftas</label>
+
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Herpes</label>
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Boca Seca</label> 
+
+<br>
+
+<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
+
+			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Otro" required>
+
+			</div>
+
+			<div class="modal-header" style="background:#3c8dbc; color:white">
+
+<button type="button" class="close" data-dismiss="modal">&times;</button>
+
+<h4 class="modal-title">Cabello</h4>
+
+</div>
 	  <br>
+	  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Despigmentado</label> 
 
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Escaso</label> 
+
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Facil Desprendimiento</label> 
+
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Signo de Bandera</label> 
+
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Delgado</label> 
+
+<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
+
+			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Otro" required>
+
+			</div>
 
 			<div class="modal-footer">
+
+			<div class="modal-header" style="background:#3c8dbc; color:white">
+
+<button type="button" class="close" data-dismiss="modal">&times;</button>
+
+<h4 class="modal-title">Ojos</h4>
+
+</div>
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Conjuntivitis</label> 
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Cataratas</label> 
+
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Presbicia</label> 
+
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Desprendimiento de Retina</label> 
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Gluocoma</label> 
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Retiropatia diabetica</label> 
+
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Astigmantismo</label> 
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Xeroftalmia</label> 
+<br>
+<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
+
+			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Otro" required>
+
+			</div>
+
+<br>
+
+
+<div class="modal-header" style="background:#3c8dbc; color:white">
+
+<button type="button" class="close" data-dismiss="modal">&times;</button>
+
+<h4 class="modal-title">Glandulas</h4>
+
+</div>
+<br>
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Hipertiroidismo</label> 
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Hipotiroidismo</label>  
+
+<br>
+
+<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
+
+			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Otro" required>
+
+			</div>
+
+			<br>
+
+			<div class="modal-header" style="background:#3c8dbc; color:white">
+
+<button type="button" class="close" data-dismiss="modal">&times;</button>
+
+<h4 class="modal-title">Piel</h4>
+
+</div>
+<br>
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Eczema</label>  
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Acné</label>  
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Osoriasis</label> 
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Alfrecia</label> 
+
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Urticaria</label> 
+
+
+<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
+
+			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Otro" required>
+
+			</div>
+<br>
+
+
+<div class="modal-header" style="background:#3c8dbc; color:white">
+
+<button type="button" class="close" data-dismiss="modal">&times;</button>
+
+<h4 class="modal-title">Intolerancia de Alimentos</h4>
+
+</div>
+<br>
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Lactosa</label> 
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Gluten</label> 
+
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Fenilalanina</label> 
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+<label class="custom-control-label" for="defaultUnchecked">Aditivos</label> 
+
+
+<br>
+
+<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
+
+			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Otro" required>
+
+			</div>
+
+
 
 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
 
@@ -3375,4 +3778,177 @@ Clinico
 	</div>
 </div>
 
-                  
+
+
+
+
+<!--======================
+Antropometría Diametros
+==============================-->
+
+<div class="modal fade" id="SignosVitales" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+		<div class="modal-header" style="background:#3c8dbc; color:white">
+
+<button type="button" class="close" data-dismiss="modal">&times;</button>
+
+<h4 class="modal-title">Signos Aterial</h4>
+
+</div>
+
+<br>
+
+<div class="input-group" >
+
+
+      </div>
+
+	
+<br>
+	  
+
+	  <div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
+
+			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Sistólica mm Hg" required>
+
+			</div>
+
+
+			<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
+
+			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Diastólica mm Hg" required>
+
+			</div>
+
+			<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
+
+			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Diagnóstica " required>
+
+			</div>
+
+			<br>
+			<div class="modal-header" style="background:#3c8dbc; color:white">
+
+<button type="button" class="close" data-dismiss="modal">&times;</button>
+
+<h4 class="modal-title">Temperatura</h4>
+
+</div>
+
+<br>
+
+<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
+
+			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Boca  36 - 38 °C" required>
+
+			</div>
+
+	
+
+	<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
+
+			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Axila °C " required>
+
+			</div>
+
+			<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
+
+			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Ingle 36 - 38 °C " required>
+
+			</div>
+
+			<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
+
+			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Recto  36 - 38 °C " required>
+
+			</div>
+			
+<BR>
+<div class="modal-header" style="background:#3c8dbc; color:white">
+
+<button type="button" class="close" data-dismiss="modal">&times;</button>
+
+<h4 class="modal-title">Pulso</h4>
+
+</div>
+
+<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
+
+			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Cartideo 60-100 ppm" required>
+
+			</div>
+
+			<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
+
+			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Radial 60-100 ppm" required>
+
+			</div>
+
+
+			<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
+
+			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Axilar 60-100 ppm" required>
+
+			</div>
+
+			
+
+			<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
+
+			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Broquial 60-100 ppm" required>
+
+			</div>
+
+			<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
+
+			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Femural 60-100 ppm" required>
+
+			</div>
+
+			<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
+
+			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Otro" required>
+
+			</div>
+			<div class="modal-footer">
+
+
+
+<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+
+<button type="submit" class="btn btn-primary  background-color: #8064A2">Guardar Datos</button>
+
+</div>
+
+	
+		</div>
+	</div>
+</div>
+
