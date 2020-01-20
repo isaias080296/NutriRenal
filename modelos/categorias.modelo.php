@@ -10,16 +10,23 @@ require_once "conexion.php";
 class ModeloCategorias{
 
 	/*=============================================
-	CREAR CATEGORIA
+	CREAR CLIENTE
 	=============================================*/
 
 	static public function mdlIngresarCategoria($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(categoria, fecha1, hora) VALUES (:categoria, :fechas, :hora)");
+		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(categoria, Fecha1, Paciente, Hora, Costo) VALUES (:categoria, :Paciente, :Fecha1, :hora, :Costo)");
 
-		$stmt->bindParam(":categoria", $datos, PDO::PARAM_STR);
-		$stmt->bindParam(":fechas", $datos, PDO::PARAM_STR);
-		$stmt->bindParam(":hora", $datos, PDO::PARAM_STR);
+		$stmt->bindParam(":categoria", $datos["categoria"], PDO::PARAM_STR);
+
+	
+		$stmt->bindParam(":Paciente", $datos["Paciente"], PDO::PARAM_STR);
+        $stmt->bindParam(":Fecha1", $datos["Fecha1"], PDO::PARAM_STR);
+		$stmt->bindParam(":hora", $datos["hora"], PDO::PARAM_STR);
+		$stmt->bindParam(":Costo", $datos["Costo"], PDO::PARAM_STR);
+	
+		
+		
 
 		if($stmt->execute()){
 
@@ -35,6 +42,7 @@ class ModeloCategorias{
 		$stmt = null;
 
 	}
+
 
 	/*=============================================
 	MOSTRAR CATEGORIAS
@@ -121,4 +129,11 @@ class ModeloCategorias{
 	}
 
 }
+
+
+
+/*==============================================================================================================
+
+=================================================================================================================*/
+
 

@@ -1,52 +1,50 @@
 <?php
-/*=============================================
-GoMercadito Abigail Villanueva Tlazalo
-            Isaias Galdino Gómez Duarte
-            2018
-=============================================*/	
+
 class ControladorCategorias{
 
 	/*=============================================
-	CREAR CATEGORIAS
+	CREAR CLIENTES
 	=============================================*/
 
 	static public function ctrCrearCategoria(){
 
 		if(isset($_POST["nuevaCategoria"])){
 
-			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevaCategoria"])){
+			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["nuevaCategoria"]) ){
 
-				$tabla = "categorias";
+			   	$tabla = "categorias";
 
-				
-				$datos = array("nuevaCategoria"=>$_POST["nuevaCategoria"],
-				"hora"=>$_POST["hora"],
-				"fechas"=>$_POST["fechas"]
-				);
+			   	$datos = array("Paciente"=>$_POST["Paciente"],
+					           "Fecha1"=>$_POST["Fecha1"],
+					           "Costo"=>$_POST["Costo"],
+					           "hora"=>$_POST["hora"],
+					           "categoria"=>$_POST["nuevaCategoria"]
+					          
 
-	$respuesta = ModeloClientes::mdlIngresarCliente($tabla, $datos);
+					           );
 
-	if($respuesta == "ok"){
+			   	$respuesta = ModeloCategorias::mdlIngresarCategoria($tabla, $datos);
 
-	 echo'<script>
+			   	if($respuesta == "ok"){
 
-	 swal({
-		   type: "success",
-		   title: "El cliente ha sido guardado correctamente",
-		   showConfirmButton: true,
-		   confirmButtonText: "Cerrar"
-		   }).then(function(result){
-					 if (result.value) {
+					echo'<script>
 
-					 window.location = "clientes";
+					swal({
+						  type: "success",
+						  title: "La ha sido guardado correctamente",
+						  showConfirmButton: true,
+						  confirmButtonText: "Cerrar"
+						  }).then(function(result){
+									if (result.value) {
 
-					 }
-				 })
+									window.location = "categorias";
 
-	 </script>';
+									}
+								})
 
- }
+					</script>';
 
+				}
 
 			}else{
 
@@ -54,7 +52,7 @@ class ControladorCategorias{
 
 					swal({
 						  type: "error",
-						  title: "¡La categoría no puede ir vacía o llevar caracteres especiales!",
+						  title: "¡La cita no puede ir vacío o llevar caracteres especiales!",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
@@ -67,11 +65,14 @@ class ControladorCategorias{
 
 			  	</script>';
 
+
+
 			}
 
 		}
 
 	}
+
 
 	/*=============================================
 	MOSTRAR CATEGORIAS
@@ -187,3 +188,11 @@ class ControladorCategorias{
 		
 	}
 }
+
+
+
+
+/*----=========================
+CapacidadF
+==============================-----*/
+

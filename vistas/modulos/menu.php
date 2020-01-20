@@ -1,10 +1,10 @@
-
+ 
 
 <aside class="main-sidebar">
 <!--=====================================
 GoMercadito Abigail Villanueva Tlazalo 
             Isaías Galdino Gomez Duarte
-            2018
+            2018  #P006835323
   ======================================-->
 	 <section class="sidebar">
 
@@ -300,6 +300,34 @@ Fotos del Paciente
 
 </div>
 
+
+<br>
+<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+
+			  <select class="form-control input-lg" id="nuevaCategoria" name="nuevaCategoria" required>
+				
+				<option value="">Selecionar Cita</option>
+
+				<?php
+
+				$item = null;
+				$valor = null;
+
+				$categorias = ControladorCategorias::ctrMostrarCategorias($item, $valor);
+
+				foreach ($categorias as $key => $value) {
+				  
+				  echo '<option value="'.$value["id"].'">'.$value["categoria"].'</option>';
+				}
+
+				?>
+
+			  </select>
+
+			</div>
+
 <br>
 
 <div class="input-group" >
@@ -579,7 +607,7 @@ Datos Biquimicos
 	   </button>
 
 	   &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp 
-	   <button class="btn btn-primary btn-primary" data-toggle="modal" data-target="#SintomasGastrointestinales">
+	   <button class="btn btn-primary btn-primary" data-toggle="modal" data-target="#">
           
 		Electrolitos
  
@@ -618,6 +646,8 @@ Datos Biquimicos
   
 		</button>
 
+
+</form>
 		<br>
  <br>
       </div>
@@ -643,17 +673,84 @@ Capacidad Funcional
 -->
 
 <div class="modal fade" id="CapacidadFuncional" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-		<div class="modal-header" style="background:#3c8dbc; color:white">
 
-<button type="button" class="close" data-dismiss="modal">&times;</button>
+<div class="modal-dialog">
 
-<h4 class="modal-title"> Capacidad Funcional</h4>
+<div class="modal-content">
 
-</div>
+<form role="form" method="post">
+
+	<!--=====================================
+	CABEZA DEL MODAL
+	======================================-->
+
+	<div class="modal-header" style="background:#3c8dbc; color:white">
+
+	  <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+	  <h4 class="modal-title">Agregar categoría</h4>
+
+	</div>
+<br>
+
+<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+
+			  <select class="form-control input-lg" id="Cita" name="Cita" required>
+				
+				<option value="">Selecionar Cita</option>
+
+				<?php
+
+				$item = null;
+				$valor = null;
+
+				$categorias = ControladorCategorias::ctrMostrarCategorias($item, $valor);
+
+				foreach ($categorias as $key => $value) {
+				  
+				  echo '<option value="'.$value["categoria"].'">'.$value["categoria"].'</option>';
+				}
+
+				?>
+
+			  </select>
+
+			</div>
 
 <br>
+
+<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+
+			  <select class="form-control input-lg" id="Paciente" name="Paciente" required>
+				
+				<option value="">Selecionar Nombre del Paciente</option>
+
+				<?php
+
+				$item = null;
+				$valor = null;
+
+				$clientes = ControladorClientes::ctrMostrarClientes($item, $valor);
+
+				foreach ($clientes as $key => $value) {
+				  
+				  echo '<option value="'.$value["nombre"].'">'.$value["nombre"].'</option>';
+				}
+
+				?>
+
+			  </select>
+
+			</div>
+
+
+<br>
+
+
 
 <div class="input-group" >
 
@@ -664,7 +761,7 @@ Capacidad Funcional
           
           <span class="input-group-addon"><i class="fa fa-cutlery" aria-hidden="true"></i></span>
         
-          <select class="form-control input-lg" id="AS" name="AS" required>
+          <select class="form-control input-lg" id="CF1" name="CF1" required>
             <option value="">Se Alimenta Solo</option>
          
             <option value="Si">Si</option>
@@ -678,7 +775,7 @@ Capacidad Funcional
           
           <span class="input-group-addon"><i class="fa fa-heartbeat" aria-hidden="true"></i></span>
         
-          <select class="form-control input-lg" id="Fa" name="Fa" required>
+          <select class="form-control input-lg" id="CF2" name="CF2" required>
             <option value="">Fatiga</option>
          
             <option value="Si">Si</option>
@@ -692,7 +789,7 @@ Capacidad Funcional
           
           <span class="input-group-addon"><i class="fa fa-building" aria-hidden="true"></i></span>
         
-          <select class="form-control input-lg" id="CA" name="CA" required>
+          <select class="form-control input-lg" id="CF3" name="CF3" required>
             <option value="">Capacidad para Trabajar</option>
          
             <option value="Si">Si</option>
@@ -705,7 +802,7 @@ Capacidad Funcional
           
           <span class="input-group-addon"><i class="fa fa-briefcase" aria-hidden="true"></i></span>
         
-          <select class="form-control input-lg" id="NT" name="NT" required>
+          <select class="form-control input-lg" id="CF4" name="CF4" required>
             <option value="">Ha dejado de Trabajar</option>
          
             <option value="Si">Si</option>
@@ -720,7 +817,7 @@ Capacidad Funcional
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Ingresar Actividades Fisicas" required>
+			  <input type="text" class="form-control input-lg"  id="CF5" name="CF5" placeholder="Ingresar Actividades Fisicas" required>
 
 			</div>
 
@@ -728,15 +825,16 @@ Capacidad Funcional
 
 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
 
-<button type="submit" class="btn btn-primary  background-color: #8064A2">Guardar Datos</button>
+<button type="button" class="btn btn-primary  background-color: #8064A2" data-dismiss="HabilidadesConocimientos">Guardar Datos</button>
+</div>
+
+
 
 </div>
 
-	
-		</div>
-	</div>
 </div>
 
+</div>
 
 
 
@@ -770,7 +868,7 @@ Habilidades y Conocimietos
           
           <span class="input-group-addon"><i class="fa fa-cutlery" aria-hidden="true"></i></span>
         
-          <select class="form-control input-lg" id="TN" name="TN" required>
+          <select class="form-control input-lg" id="HC1" name="HC1" required>
             <option value="">Conoce sobre temas relacionados con Nutrición</option>
          
             <option value="Si">Si</option>
@@ -784,7 +882,7 @@ Habilidades y Conocimietos
           
           <span class="input-group-addon"><i class="fa fa-heartbeat" aria-hidden="true"></i></span>
         
-          <select class="form-control input-lg" id="Fa" name="Fa" required>
+          <select class="form-control input-lg" id="HC2" name="HC2" required>
             <option value="">Enfermedad Renal, Riesgos y Complicaciones</option>
          
             <option value="Si">Si</option>
@@ -799,7 +897,7 @@ Habilidades y Conocimietos
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="enfermedad" placeholder="Cual" required>
+			  <input type="text" class="form-control input-lg" name="HC3" placeholder="Cual" required>
 
 			</div>
 
@@ -809,7 +907,7 @@ Habilidades y Conocimietos
           
           <span class="input-group-addon"><i class="fa fa-cutlery" aria-hidden="true"></i></span>
         
-          <select class="form-control input-lg" id="MD" name="MD" required>
+          <select class="form-control input-lg" id="HC4" name="HC4" required>
             <option value="">Modificaciones Dietéticas</option>
          
             <option value="Si">Si</option>
@@ -822,7 +920,7 @@ Habilidades y Conocimietos
           
           <span class="input-group-addon"><i class="fa fa-cutlery" aria-hidden="true"></i></span>
         
-          <select class="form-control input-lg" id="MP" name="MP" required>
+          <select class="form-control input-lg" id="HC5" name="HC5" required>
             <option value="">Medir Porciones</option>
          
             <option value="Si">Si</option>
@@ -836,7 +934,7 @@ Habilidades y Conocimietos
           
           <span class="input-group-addon"><i class="fa fa-cutlery" aria-hidden="true"></i></span>
         
-          <select class="form-control input-lg" id="AAF" name="AAF" required>
+          <select class="form-control input-lg" id="HC6" name="HC6" required>
             <option value="">Alimentos Altos en Fósforo</option>
          
             <option value="Si">Si</option>
@@ -849,7 +947,7 @@ Habilidades y Conocimietos
           
           <span class="input-group-addon"><i class="fa fa-cutlery" aria-hidden="true"></i></span>
         
-          <select class="form-control input-lg" id="ABF" name="ABF" required>
+          <select class="form-control input-lg" id="HC7" name="HC7" required>
             <option value="">Alimentos Bajos en Fósforo</option>
          
             <option value="Si">Si</option>
@@ -862,7 +960,7 @@ Habilidades y Conocimietos
           
           <span class="input-group-addon"><i class="fa fa-cutlery" aria-hidden="true"></i></span>
         
-          <select class="form-control input-lg" id="AAS" name="AAS" required>
+          <select class="form-control input-lg" id="HC8" name="HC8" required>
             <option value="">Alimentos Altos en Sodio</option>
          
             <option value="Si">Si</option>
@@ -876,7 +974,7 @@ Habilidades y Conocimietos
           
           <span class="input-group-addon"><i class="fa fa-cutlery" aria-hidden="true"></i></span>
         
-          <select class="form-control input-lg" id="ABS" name="ABS" required>
+          <select class="form-control input-lg" id="HC9" name="HC9" required>
             <option value="">Alimentos Bajos en Sodio</option>
          
             <option value="Si">Si</option>
@@ -891,7 +989,7 @@ Habilidades y Conocimietos
           
           <span class="input-group-addon"><i class="fa fa-cutlery" aria-hidden="true"></i></span>
         
-          <select class="form-control input-lg" id="AAP" name="AAP" required>
+          <select class="form-control input-lg" id="HC10" name="HC10" required>
             <option value="">Alimentos Altos en Potasio</option>
          
             <option value="Si">Si</option>
@@ -905,7 +1003,7 @@ Habilidades y Conocimietos
           
           <span class="input-group-addon"><i class="fa fa-cutlery" aria-hidden="true"></i></span>
         
-          <select class="form-control input-lg" id="ABP" name="ABP" required>
+          <select class="form-control input-lg" id="HC11" name="HC11" required>
             <option value="">Alimentos Bajos en Potasio</option>
          
             <option value="Si">Si</option>
@@ -932,7 +1030,7 @@ Habilidades y Conocimietos
           
           <span class="input-group-addon"><i class="fa fa-cutlery" aria-hidden="true"></i></span>
         
-          <select class="form-control input-lg" id="ABC" name="ABC" required>
+          <select class="form-control input-lg" id="HC13" name="HC13" required>
             <option value="">Alimentos Bajos en Calcio</option>
          
             <option value="Si">Si</option>
@@ -940,31 +1038,42 @@ Habilidades y Conocimietos
           </select>
 
       </div>
-
-
-
-
 	  <br>
 
+<div class="input-group">
+		
+		<span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			<div class="modal-footer">
+		<input type="text" class="form-control input-lg"  id="CF5" name="CF5" placeholder="Ingresar Actividades Fisicas" required>
+
+	  </div>
+
+	  <div class="modal-footer">
 
 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
 
-<button type="submit" class="btn btn-primary  background-color: #8064A2">Guardar Datos</button>
+<button type="button" class="btn btn-primary  background-color: #8064A2" data-dismiss="HabilidadesConocimientos">Guardar Datos</button>
+</div>
+
+
 
 </div>
 
-	
-		</div>
-	</div>
 </div>
+
+</div>
+
+
+
+
+
 
 
 <!--- ====================================
 Sintomas Gastrointestinales
 =========================================
 -->
+
 
 <div class="modal fade" id="SintomasGastrointestinales" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
@@ -973,27 +1082,23 @@ Sintomas Gastrointestinales
 
 <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-<h4 class="modal-title">Síntomas Gastrointestinales</h4>
+<h4 class="modal-title"> Sintomas Gastrointestinales</h4>
 
 </div>
 
 <br>
 
-<div class="input-group" >
 
-
-      </div>
 
 	  <div class="input-group">
           
-          <span class="input-group-addon"><i class="fa fa-cutlery" aria-hidden="true"></i></span>
+	  <span class="input-group-addon"><i class="fa fa-cutlery" aria-hidden="true"></i></span>
         
-          <select class="form-control input-lg" id="TN" name="TN" required>
+		<select class="form-control input-lg" id="SG1" name="SG1" required>
             <option value="">Tolerancia Vía Oral</option>
-         
-            <option value="Si">Dificultad para Masticar</option>
-            <option value="No">Disgeusia</option>
-			<option value="No">Gastroparecia</option>
+            <option value="Dificultad para Masticar">Dificultad para Masticar</option>
+            <option value="Disgeusia">Disgeusia</option>
+			<option value="Gastroperacia">Gastroparecia</option>
           </select>
 
       </div>
@@ -1003,7 +1108,7 @@ Sintomas Gastrointestinales
           
           <span class="input-group-addon"><i class="fa fa-heartbeat" aria-hidden="true"></i></span>
         
-          <select class="form-control input-lg" id="Fa" name="Fa" required>
+          <select class="form-control input-lg" id="SGG2" name="SGG2" required>
             <option value="">Anorexia</option>
          
             <option value="Si">Si</option>
@@ -1021,7 +1126,7 @@ Sintomas Gastrointestinales
           
           <span class="input-group-addon"><i class="fa fa-heartbeat" aria-hidden="true"></i></span>
         
-          <select class="form-control input-lg" id="MP" name="MP" required>
+          <select class="form-control input-lg" id="SG3" name="SG3" required>
             <option value="">Vómito</option>
          
             <option value="Si">Si</option>
@@ -1035,7 +1140,7 @@ Sintomas Gastrointestinales
           
           <span class="input-group-addon"><i class="fa fa-heartbeat" aria-hidden="true"></i></span>
         
-          <select class="form-control input-lg" id="AAF" name="AAF" required>
+          <select class="form-control input-lg" id="SG4" name="SG4" required>
             <option value="">Náuseas</option>
          
             <option value="Si">Si</option>
@@ -1048,7 +1153,7 @@ Sintomas Gastrointestinales
           
           <span class="input-group-addon"><i class="fa fa-heartbeat" aria-hidden="true"></i></span>
         
-          <select class="form-control input-lg" id="ABF" name="ABF" required>
+          <select class="form-control input-lg" id="SG5" name="SG5" required>
             <option value="">Sensación de Plenitud y Saciedad Temprana</option>
          
             <option value="Si">Si</option>
@@ -1061,7 +1166,7 @@ Sintomas Gastrointestinales
           
           <span class="input-group-addon"><i class="fa fa-heartbeat" aria-hidden="true"></i></span>
         
-          <select class="form-control input-lg" id="AAS" name="AAS" required>
+          <select class="form-control input-lg" id="SG6" name="SG6" required>
             <option value="">Cambios en el Apetito</option>
          
             <option value="Si">Si</option>
@@ -1075,23 +1180,16 @@ Sintomas Gastrointestinales
           
           <span class="input-group-addon"><i class="fa fa-heartbeat" aria-hidden="true"></i></span>
         
-          <select class="form-control input-lg" id="ABS" name="ABS" required>
+          <select class="form-control input-lg" id="SG8" name="SG8" required>
             <option value="">Sed</option>
          
             <option value="Si">Si</option>
             <option value="No">No</option>
           </select>
 
-      </div>
 
-
-	  <br>
-	  <div class="input-group">
-          
-          <span class="input-group-addon"><i class="fa fa-heartbeat" aria-hidden="true"></i></span>
-        
-          <select class="form-control input-lg" id="AAP" name="AAP" required>
-            <option value="">Problemas en Comer los Alimentos</option>
+          <select class="form-control input-lg" id="SG7" name="SG7" required>
+            <option value="">Problemas en comer los Alimentos</option>
          
             <option value="Si">Si</option>
             <option value="No">No</option>
@@ -1104,7 +1202,7 @@ Sintomas Gastrointestinales
           
           <span class="input-group-addon"><i class="fa fa-heartbeat" aria-hidden="true"></i></span>
         
-          <select class="form-control input-lg" id="ABP" name="ABP" required>
+          <select class="form-control input-lg" id="SG9" name="SG9" required>
             <option value="">Alteración en Gusto</option>
          
             <option value="Si">Si</option>
@@ -1118,19 +1216,29 @@ Sintomas Gastrointestinales
 
 	  <br>
 
+<div class="input-group">
+		
+		<span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			<div class="modal-footer">
+		<input type="text" class="form-control input-lg"  id="CF5" name="CF5" placeholder="Ingresar Actividades Fisicas" required>
+
+	  </div>
+
+	  <div class="modal-footer">
 
 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
 
-<button type="submit" class="btn btn-primary  background-color: #8064A2">Guardar Datos</button>
+<button type="button" class="btn btn-primary  background-color: #8064A2" data-dismiss="HabilidadesConocimientos">Guardar Datos</button>
+</div>
+
+
 
 </div>
 
-	
-		</div>
-	</div>
 </div>
+
+</div>
+
 
 
 <!--- ====================================
@@ -1168,38 +1276,27 @@ Asociados a la enfermedad
 
 
 	  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-    <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-	<label class="custom-control-label" for="defaultUnchecked">Fatiga</label>
-	
-	&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Neuropatía</label>
+  <div class="checkbox">
+  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+  <label><input type="checkbox" name="SU1[]" value="Fatiga">Fatiga</label>
+  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+  <label><input type="checkbox" name="SU1[]" value="Neuropatia">Neuropatia</label>
+  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+  <label><input type="checkbox" name="SU1[]" value="Disminución de agudeza mental">Disminución de agudeza mental</label>
+  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp   &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp 
+  <label><input type="checkbox" name="SU1[]" value="Anorexia y Nauseas">Anorexia y Nauseas</label>
 
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Disminución de agudeza mental</label>
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Anorexia y Nauseas</label>
+  &nbsp &nbsp &nbsp 
+  <label><input type="checkbox" name="SU1[]" value="Disminucion del Sentido del gusto y olfato">Disminución del Sentido del Gusto y Olfato</label>
+ <br>
+  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+  <label><input type="checkbox" name="SU1[]" value="Calambres">Calambres</label>
+  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+  <label><input type="checkbox" name="SU1[]" value="Piernas Inquietas">Piernas Inquietas</label>
+  &nbsp &nbsp &nbsp&nbsp&nbsp
+  <label><input type="checkbox" name="SU1[]" value="Alteraciones del Sueño">Alteraciones del Sueño</label>
+</div>
 
-&nbsp &nbsp&nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Disminución del sentido del gusto y Olfato</label>
-
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Calambres</label>
-
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Piernas inquietas</label>
-
-&nbsp &nbsp &nbsp&nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Alteraciones de Sueño</label>
 
 </div>
 
@@ -1217,13 +1314,13 @@ Asociados a la enfermedad
 <div class="custom-control custom-checkbox">
 
 
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Comezón</label>
+<div class="checkbox">
+  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+  <label><input type="checkbox" name="SF1[]" value="Fatiga">Comezón</label>
+  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+  <label><input type="checkbox" name="SF1[]" value="Dolor Óseo">Dolor Óseo</label>
 
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Dolor Óseo</label>
+</div>
 
 
 
@@ -1243,61 +1340,48 @@ Asociados a la enfermedad
 <br>
 
 <div class="custom-control custom-checkbox">
-
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Temblores</label>
-
- &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp&nbsp
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Debilidad Muscular</label>
-
-
-&nbsp &nbsp &nbsp&nbsp&nbsp
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Disnea</label>
-
+<div class="checkbox">
+  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+  <label><input type="checkbox" name="SH1[]" value="Temblores">Temblores</label>
+  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+  <label><input type="checkbox" name="SH1[]" value="Debilidad Muscular">Debilidad Muscular</label>
+  &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp 
+  <label><input type="checkbox" name="SH1[]" value="Disnea">Disnea</label>
 <br>
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp&nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Biadicardia</label>
-
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Arritmia</label>
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Náuseas</label>
+  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp  &nbsp
+  <label><input type="checkbox" name="SH1[]" value="Biacardia">Biacardia</label>
+  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+  <label><input type="checkbox" name="SH1[]" value="Arritmia">Arritmia</label>
+  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+  <label><input type="checkbox" name="SH1[]" value="Náuseas">Náuseas</label>
+  <br>
+  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp  &nbsp
+  <label><input type="checkbox" name="SH1[]" value="Pulso Lento">Pulso Lento</label>
+</div>
 
 
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Pulso Lento</label>
 
 	</div>
 
 
 
-	  <br>
-
-
-			<div class="modal-footer">
+	
+	 
+	<div class="modal-footer">
 
 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
 
-<button type="submit" class="btn btn-primary  background-color: #8064A2">Guardar Datos</button>
+<button type="button" class="btn btn-primary  background-color: #8064A2" data-dismiss="HabilidadesConocimientos">Guardar Datos</button>
+</div>
+
+
 
 </div>
 
-	
-		</div>
-	</div>
 </div>
+
+</div>
+
 
 
 
@@ -1330,7 +1414,7 @@ Habitos Alimentarios
           
           <span class="input-group-addon"><i class="fa fa-cutlery" aria-hidden="true"></i></span>
         
-          <select class="form-control input-lg" id="TN" name="TN" required>
+          <select class="form-control input-lg" id="HA1" name="HA1" required>
             <option value="">Recomendaciones Dietéticas Previas</option>
          
             <option value="Si">Si</option>
@@ -1363,7 +1447,7 @@ Habitos Alimentarios
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="time" class="form-control input-lg" name="enfermedad" placeholder="Harario de Comida" required>
+			  <input type="time" class="form-control input-lg" id="HA2" name="HA2" placeholder="Harario de Comida" required>
 
 			</div></td>
 
@@ -1379,7 +1463,7 @@ Habitos Alimentarios
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="time" class="form-control input-lg" name="enfermedad" placeholder="Harario de Comida" required>
+			  <input type="time" class="form-control input-lg" id="HA3" name="HA3" placeholder="Harario de Comida" required>
 
 			</div></td>
 
@@ -1395,7 +1479,7 @@ Habitos Alimentarios
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="time" class="form-control input-lg" name="enfermedad" placeholder="Harario de Comida" required>
+			  <input type="time" class="form-control input-lg" id="HA4" name="HA4" placeholder="Harario de Comida" required>
 
 			</div></td>
 
@@ -1418,7 +1502,7 @@ Habitos Alimentarios
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="time" class="form-control input-lg" name="enfermedad" placeholder="Harario de Comida" required>
+			  <input type="time" class="form-control input-lg" id="HA5" name="HA5" placeholder="Harario de Comida" required>
 
 			</div></td>
 
@@ -1440,7 +1524,7 @@ Habitos Alimentarios
           
           <span class="input-group-addon"><i class="fa fa-heartbeat" aria-hidden="true"></i></span>
         
-          <select class="form-control input-lg" id="AAP" name="AAP" required>
+          <select class="form-control input-lg" id="HA6" name="HA6" required>
             <option value="">Alimentación antes de terapia sustitutiva</option>
          
             <option value="Si">Si</option>
@@ -1455,7 +1539,7 @@ Habitos Alimentarios
           
 		  <span class="input-group-addon"><i class="fa fa-user"></i></span> 
 
-		  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Ejemplo" required>
+		  <input type="text" class="form-control input-lg" id="HA7" name="HA7" placeholder="Ejemplo" required>
 
 		</div>
 		<br>
@@ -1464,7 +1548,7 @@ Habitos Alimentarios
           
           <span class="input-group-addon"><i class="fa fa-heartbeat" aria-hidden="true"></i></span>
         
-          <select class="form-control input-lg" id="AAP" name="AAP" required>
+          <select class="form-control input-lg" id="HA8" name="HA8" required>
             <option value="">Alimentación Despues de la Terapia Sustitutiva</option>
          
             <option value="Si">Si</option>
@@ -1479,7 +1563,7 @@ Habitos Alimentarios
           
 		  <span class="input-group-addon"><i class="fa fa-user"></i></span> 
 
-		  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Ejemplo" required>
+		  <input type="text" class="form-control input-lg" id="HA9"name="HA9" placeholder="Ejemplo" required>
 
 		</div>
 		<br>
@@ -1488,7 +1572,7 @@ Habitos Alimentarios
           
 		  <span class="input-group-addon"><i class="fa fa-user"></i></span> 
 
-		  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="¿Con quien come?" required>
+		  <input type="text" class="form-control input-lg"  id="HA10" name="HA10" placeholder="¿Con quien come?" required>
 
 		</div>
 
@@ -1500,26 +1584,18 @@ Habitos Alimentarios
           
 		  <span class="input-group-addon"><i class="fa fa-user"></i></span> 
 
-		  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="¿Quien Prepara los Alimentos?" required>
+		  <input type="text" class="form-control input-lg"  id="HA11" name="HA11" placeholder="¿Quien Prepara los Alimentos?" required>
 
 		</div>
 
-		<br>
 
-			<div class="input-group">
-          
-		  <span class="input-group-addon"><i class="fa fa-user"></i></span> 
-
-		  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="¿Con quien come?" required>
-
-		</div>
 
 <br>
 	<div class="input-group">
           
           <span class="input-group-addon"><i class="fa fa-heartbeat" aria-hidden="true"></i></span>
         
-          <select class="form-control input-lg" id="AAP" name="AAP" required>
+          <select class="form-control input-lg" id="HA12" name="HA12" required>
             <option value="">Apego o Aversión a Ciertos Alimentos</option>
          
             <option value="Si">Si</option>
@@ -1533,7 +1609,7 @@ Habitos Alimentarios
           
 		  <span class="input-group-addon"><i class="fa fa-user"></i></span> 
 
-		  <input type="text" class="form-control input-lg" name="ApegoaCiertosAliemntos" placeholder="Cuales" required>
+		  <input type="text" class="form-control input-lg"  id="HA13"name="HA13" placeholder="Cuales" required>
 
 		</div>
 
@@ -1543,7 +1619,7 @@ Habitos Alimentarios
           
           <span class="input-group-addon"><i class="fa fa-heartbeat" aria-hidden="true"></i></span>
         
-          <select class="form-control input-lg" id="AAP" name="AAP" required>
+          <select class="form-control input-lg" id="HA14" name="HA14" required>
             <option value="">Consumo de Cafeína</option>
          
             <option value="Si">Si</option>
@@ -1558,7 +1634,7 @@ Habitos Alimentarios
           
           <span class="input-group-addon"><i class="fa fa-heartbeat" aria-hidden="true"></i></span>
         
-          <select class="form-control input-lg" id="AAP" name="AAP" required>
+          <select class="form-control input-lg" id="HA15" name="HA15" required>
             <option value="">Tazas</option>
          
             <option value="Si">1</option>
@@ -1577,7 +1653,7 @@ Habitos Alimentarios
           
           <span class="input-group-addon"><i class="fa fa-heartbeat" aria-hidden="true"></i></span>
         
-          <select class="form-control input-lg" id="AAP" name="AAP" required>
+          <select class="form-control input-lg" id="HA16" name="HA16" required>
             <option value="">Consumo de Alcohol</option>
          
             <option value="Si">Si</option>
@@ -1593,7 +1669,7 @@ Habitos Alimentarios
           
           <span class="input-group-addon"><i class="fa fa-heartbeat" aria-hidden="true"></i></span>
         
-          <select class="form-control input-lg" id="AAP" name="AAP" required>
+          <select class="form-control input-lg" id="HA17" name="HA17" required>
             <option value="">Frecuencia</option>
          
             <option value="1/7">1/7</option>
@@ -1613,7 +1689,7 @@ Habitos Alimentarios
           
           <span class="input-group-addon"><i class="fa fa-heartbeat" aria-hidden="true"></i></span>
         
-          <select class="form-control input-lg" id="AAP" name="AAP" required>
+          <select class="form-control input-lg" id="HA18" name="HA18" required>
             <option value="">Consumo de Sal</option>
          
             <option value="Nada">Nada</option>
@@ -1631,7 +1707,7 @@ Habitos Alimentarios
 	<div class="input-group">
           
           <span class="input-group-addon"><i class="fa fa-heartbeat" aria-hidden="true"></i></span>   
-          <select class="form-control input-lg" id="AAP" name="AAP" required>
+          <select class="form-control input-lg" id="HA19" name="HA19" required>
             <option value="">Consumo de Refersco</option>
          
             <option value="Si">Si</option>
@@ -1645,7 +1721,7 @@ Habitos Alimentarios
 	  <div class="input-group">
           
           <span class="input-group-addon"><i class="fa fa-heartbeat" aria-hidden="true"></i></span>   
-          <select class="form-control input-lg" id="AAP" name="AAP" required>
+          <select class="form-control input-lg" id="HA20" name="HA20" required>
             <option value="">Vasos</option>
          
             <option value="1">1</option>
@@ -1655,28 +1731,29 @@ Habitos Alimentarios
 			<option value="5">5</option>
 			<option value="Mas de 6">Mas de 6</option>
           </select>
-      </div>
+		  </div>
 
-	  <br>
-
-	  <div class="input-group">
+		  <div class="input-group">
           
-          <span class="input-group-addon"><i class="fa fa-heartbeat" aria-hidden="true"></i></span>
-        
-          <select class="form-control input-lg" id="AAP" name="AAP" required>
-            <option value="">Frecuencia</option>
+          <span class="input-group-addon"><i class="fa fa-heartbeat" aria-hidden="true"></i></span>   
+          <select class="form-control input-lg" id="HA22" name="HA22" required>
+		  <option value="">Frecuencia</option>
          
-            <option value="1/7">1/7</option>
-			<option value="2/7">2/7</option>
-			<option value="3/7">3/7</option>
-			<option value="4/7">4/7</option>
-			<option value="5/7">5/7</option>
-			<option value="6/7">6/7</option>
-			<option value="7/7">7/7</option>
+		 <option value="1/7">1/7</option>
+		 <option value="2/7">2/7</option>
+		 <option value="3/7">3/7</option>
+		 <option value="4/7">4/7</option>
+		 <option value="5/7">5/7</option>
+		 <option value="6/7">6/7</option>
+		 <option value="7/7">7/7</option>
+
+
             
           </select>
+         </div>
 
-      </div>
+	
+
 
 	  <br>
 
@@ -1684,7 +1761,7 @@ Habitos Alimentarios
           
           <span class="input-group-addon"><i class="fa fa-heartbeat" aria-hidden="true"></i></span>
         
-          <select class="form-control input-lg" id="AAP" name="AAP" required>
+          <select class="form-control input-lg" id="CAA" name="CAA" required>
             <option value="">Problemas en comer los Alimentos</option>
          
             <option value="Si">Si</option>
@@ -1698,7 +1775,7 @@ Habitos Alimentarios
           
           <span class="input-group-addon"><i class="fa fa-heartbeat" aria-hidden="true"></i></span>
         
-          <select class="form-control input-lg" id="ABP" name="ABP" required>
+          <select class="form-control input-lg" id="HA23" name="HA23" required>
             <option value="">Alteración en Gusto</option>
          
             <option value="Si">Si</option>
@@ -1713,18 +1790,23 @@ Habitos Alimentarios
 	  <br>
 
 
-			<div class="modal-footer">
+	  <div class="modal-footer">
 
 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
 
-<button type="submit" class="btn btn-primary  background-color: #8064A2">Guardar Datos</button>
+<button type="button" class="btn btn-primary  background-color: #8064A2" data-dismiss="HabilidadesConocimientos">Guardar Datos</button>
+</div>
+
+
 
 </div>
 
-	
-		</div>
-	</div>
 </div>
+
+</div>
+
+
+
 
 
 
@@ -1751,7 +1833,7 @@ Habitos Alimentarios
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Tipo" required>
+			  <input type="text" class="form-control input-lg"  id="AF1" name="AF1" placeholder="Tipo" required>
 
 			</div>
 <br>
@@ -1759,7 +1841,7 @@ Habitos Alimentarios
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Duración Horas" required>
+			  <input type="text" class="form-control input-lg" id="AF2" name="AF2" placeholder="Duración Horas" required>
 
 			</div>
 
@@ -1770,7 +1852,7 @@ Habitos Alimentarios
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Duración Minutos" required>
+			  <input type="text" class="form-control input-lg" id="AF3" name="AF3" placeholder="Duración Minutos" required>
 
 			</div>
 	
@@ -1779,7 +1861,7 @@ Habitos Alimentarios
           
           <span class="input-group-addon"><i class="fa fa-heartbeat" aria-hidden="true"></i></span>
         
-          <select class="form-control input-lg" id="Fa" name="Fa" required>
+          <select class="form-control input-lg" id="AF4" name="AF4" required>
             <option value="">Camina Distancias Cortas</option>
          
             <option value="Si">Si</option>
@@ -1793,7 +1875,7 @@ Habitos Alimentarios
           
           <span class="input-group-addon"><i class="fa fa-building" aria-hidden="true"></i></span>
         
-          <select class="form-control input-lg" id="CA" name="CA" required>
+          <select class="form-control input-lg" id="AF5" name="AF5" required>
             <option value="">Tipo de Ejercicior</option>
          
             <option value="Si">Anaerobio</option>
@@ -1808,7 +1890,7 @@ Habitos Alimentarios
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Cuales" required>
+			  <input type="text" class="form-control input-lg" id="AF6" name="AF6"  placeholder="Cuales" required>
 
 			</div>
 
@@ -1817,7 +1899,7 @@ Habitos Alimentarios
           
           <span class="input-group-addon"><i class="fa fa-briefcase" aria-hidden="true"></i></span>
         
-          <select class="form-control input-lg" id="NT" name="NT" required>
+          <select class="form-control input-lg"  id="AF7" name="AF7"  required>
             <option value="">Realiza Actividad de Tipo Laboral</option>
          
             <option value="Si">Si</option>
@@ -1832,7 +1914,7 @@ Habitos Alimentarios
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Ingresar Actividades Fisicas" required>
+			  <input type="text" class="form-control input-lg" id="AF8" name="AF8" placeholder="Ingresar Actividades Fisicas" required>
 
 			</div>
 			<br>
@@ -1842,7 +1924,7 @@ Habitos Alimentarios
           
           <span class="input-group-addon"><i class="fa fa-briefcase" aria-hidden="true"></i></span>
         
-          <select class="form-control input-lg" id="NT" name="NT" required>
+          <select class="form-control input-lg"  id="AF9" name="AF9"  required>
             <option value="">Realiza Actividad Fisica Recreativa</option>
          
             <option value="Si">Si</option>
@@ -1856,7 +1938,7 @@ Habitos Alimentarios
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Cual" required>
+			  <input type="text" class="form-control input-lg"  id="AF10" name="AF10"  placeholder="Cual" required>
 
 			</div>
 
@@ -1866,7 +1948,7 @@ Habitos Alimentarios
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Ingresar Actividades Fisicas" required>
+			  <input type="text" class="form-control input-lg"  id="AF11" name="AF11"  placeholder="Ingresar Actividades Fisicas" required>
 
 			</div>
 
@@ -1878,15 +1960,29 @@ Habitos Alimentarios
 
 </div>
 
+<?php
+
+  $crearCapacidadF = new ControladorCapacidadF();
+  $crearCapacidadF -> ctrCrearCapacidadF();
+
+?>
+
+</form>
+
+
 	
 		</div>
 	</div>
 </div>
 
+		
 <!---==============================
+
+
+
 Antropometria Basico
 ====================================--------->
-
+<form role="form" method="post">
 
 <div class="modal fade" id="Bioimpedancia" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
@@ -1909,7 +2005,34 @@ Antropometria Basico
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Estatura" required>
+			  <input type="text" class="form-control input-lg"  id="AB1" name="AB1" placeholder="Estatura" required>
+
+			</div>
+
+			
+
+
+			<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
+
+			  <input type="text" class="form-control input-lg"id="AB2" name="AB2" placeholder="Grasas en Sección Superior %" required>
+
+			</div>
+
+			<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
+
+			  <input type="text" class="form-control input-lg" id="AB3" name="AB3" placeholder="Grasa en Sección Inferior %" required>
+
+			</div>
+
+			<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
+
+			  <input type="text" class="form-control input-lg" id="AB4" name="AB4" placeholder="Grasa Visceral (Roting)" required>
 
 			</div>
 
@@ -1918,7 +2041,7 @@ Antropometria Basico
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Grasas en Sección Superior %" required>
+			  <input type="text" class="form-control input-lg" id="AB5" name="AB5" placeholder="Masa libre de Grasa kg" required>
 
 			</div>
 
@@ -1926,7 +2049,7 @@ Antropometria Basico
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Grasa en Sección Inferior %" required>
+			  <input type="text" class="form-control input-lg" id="AB6" name="AB6" placeholder="Masa Muscular  kg" required>
 
 			</div>
 
@@ -1934,16 +2057,7 @@ Antropometria Basico
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Grasa Visceral (Roting)" required>
-
-			</div>
-
-
-			<div class="input-group">
-              
-			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
-
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Masa libre de Grasa kg" required>
+			  <input type="text" class="form-control input-lg" id="AB7" name="AB7" placeholder="Peso Óseo" required>
 
 			</div>
 
@@ -1951,7 +2065,7 @@ Antropometria Basico
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Masa Muscular  kg" required>
+			  <input type="text" class="form-control input-lg" id="AB8" name="AB8" placeholder="Edad Metabólica" required>
 
 			</div>
 
@@ -1959,42 +2073,11 @@ Antropometria Basico
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Peso Óseo" required>
+			  <input type="text" class="form-control input-lg" id="AB9" name="AB9" placeholder="Estatura" required>
 
 			</div>
 
-			<div class="input-group">
-              
-			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
-
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Edad Metabólica" required>
-
-			</div>
-			<div class="modal-footer">
-
-<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
-
-<button type="submit" class="btn btn-primary  background-color: #8064A2">Guardar Datos</button>
-
-</div>
-
-	
-		</div>
-	</div>
-</div>
-
-
-
-<!----
-==============================
-Bioimpedancia Antropometría
-============================-->
-
-
-<div class="modal fade" id="Bioimpedancia" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-		<div class="modal-header" style="background:#3c8dbc; color:white">
+			<div class="modal-header" style="background:#3c8dbc; color:white">
 
 <button type="button" class="close" data-dismiss="modal">&times;</button>
 
@@ -2002,22 +2085,28 @@ Bioimpedancia Antropometría
 
 </div>
 
-<br>
 
-<div class="input-group" >
-
-
-      </div>
-
-	
-<br>
-	  
-
-	  <div class="input-group">
+			<div class="input-group">
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Estatura" required>
+			  <input type="text" class="form-control input-lg" id="AB10" name="AB10" placeholder="Peso Actual" required>
+
+			</div>
+
+			<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
+
+			  <input type="text" class="form-control input-lg" id="AB11" name="AB11" placeholder="Peso Habitual" required>
+
+			</div>
+
+			<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
+
+			  <input type="text" class="form-control input-lg" id="AB12" name="AB12" placeholder="Peso Teórico" required>
 
 			</div>
 
@@ -2026,7 +2115,7 @@ Bioimpedancia Antropometría
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Peso Actual" required>
+			  <input type="text" class="form-control input-lg" id="AB13" name="AB13" placeholder="Peso Predialisis" required>
 
 			</div>
 
@@ -2034,7 +2123,7 @@ Bioimpedancia Antropometría
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Peso Habitual" required>
+			  <input type="text" class="form-control input-lg" id="AB14" name="AB14" placeholder="Peso Seco" required>
 
 			</div>
 
@@ -2042,278 +2131,13 @@ Bioimpedancia Antropometría
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Peso Teórico" required>
+			  <input type="text" class="form-control input-lg" id="AB15" name="AB15" placeholder="Peso Corregido por eclema" required>
 
 			</div>
 
 
-			<div class="input-group">
-              
-			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Peso Predialisis" required>
-
-			</div>
-
-			<div class="input-group">
-              
-			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
-
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Peso Seco" required>
-
-			</div>
-
-			<div class="input-group">
-              
-			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
-
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Peso Corregido por eclema" required>
-
-			</div>
-			<div class="modal-footer">
-
-<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
-
-<button type="submit" class="btn btn-primary  background-color: #8064A2">Guardar Datos</button>
-
-</div>
-
-	
-		</div>
-	</div>
-</div>
-<!--===============================-->
-
-<!---==============================
-Antropometria Pliegues
-====================================--------->
-
-
-<div class="modal fade" id="Pliegues" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-		<div class="modal-header" style="background:#3c8dbc; color:white">
-
-<button type="button" class="close" data-dismiss="modal">&times;</button>
-
-<h4 class="modal-title">Pligues</h4>
-
-</div>
-
-<br>
-
-<div class="input-group" >
-
-      </div>
-<br>
-	  <div class="input-group">
-              
-			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
-
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Subescapular (mm)" required>
-
-			</div>
-
-
-			<div class="input-group">
-              
-			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
-
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Triceps (mm)" required>
-
-			</div>
-
-			<div class="input-group">
-              
-			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
-
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Biceps (mm)" required>
-
-			</div>
-
-			<div class="input-group">
-              
-			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
-
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="LLeocrestal (mm)" required>
-
-			</div>
-
-
-			<div class="input-group">
-              
-			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
-
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Supraíliaco (mm)" required>
-
-			</div>
-
-			<div class="input-group">
-              
-			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
-
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Abdominal (mm)" required>
-
-			</div>
-
-			<div class="input-group">
-              
-			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
-
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Muslo Frontal (mm)" required>
-
-			</div>
-
-			<div class="input-group">
-              
-			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
-
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Pantorrilla Medial" required>
-
-			</div>
-
-
-			<div class="input-group">
-              
-			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
-
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Axiliar Medial" required>
-
-			</div>
-
-
-			<div class="input-group">
-              
-			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
-
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Pectoral" required>
-
-			</div>
-			<div class="modal-footer">
-
-<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
-
-<button type="submit" class="btn btn-primary  background-color: #8064A2">Guardar Datos</button>
-
-</div>
-
-	
-		</div>
-	</div>
-</div>
-
-
-
-<!----
-==============================
-Bioimpedancia Antropometría
-============================-->
-
-
-<div class="modal fade" id="AntropometriaBasica" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-		<div class="modal-header" style="background:#3c8dbc; color:white">
-
-<button type="button" class="close" data-dismiss="modal">&times;</button>
-
-<h4 class="modal-title"> Basica</h4>
-
-</div>
-
-<br>
-
-<div class="input-group" >
-
-
-      </div>
-
-	
-<br>
-	  
-
-	  <div class="input-group">
-              
-			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
-
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Estatura" required>
-
-			</div>
-
-
-			<div class="input-group">
-              
-			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
-
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Peso Actual" required>
-
-			</div>
-
-			<div class="input-group">
-              
-			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
-
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Peso Habitual" required>
-
-			</div>
-
-			<div class="input-group">
-              
-			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
-
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Peso Teórico" required>
-
-			</div>
-
-
-			<div class="input-group">
-              
-			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
-
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Peso Predialisis" required>
-
-			</div>
-
-			<div class="input-group">
-              
-			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
-
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Peso Seco" required>
-
-			</div>
-
-			<div class="input-group">
-              
-			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
-
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Peso Corregido por eclema" required>
-
-			</div>
-			<div class="modal-footer">
-
-<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
-
-<button type="submit" class="btn btn-primary  background-color: #8064A2">Guardar Datos</button>
-
-</div>
-
-	
-		</div>
-	</div>
-</div>
-<!--===============================-->
-
-
-
-
-<!--======================
-Antropometría PERMÍMETROS
-==============================-->
-
-<div class="modal fade" id="Perimetros" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-		<div class="modal-header" style="background:#3c8dbc; color:white">
+			<div class="modal-header" style="background:#3c8dbc; color:white">
 
 <button type="button" class="close" data-dismiss="modal">&times;</button>
 
@@ -2328,15 +2152,12 @@ Antropometría PERMÍMETROS
 
       </div>
 
-	
-<br>
-	  
 
 	  <div class="input-group">
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Cafálico cm" required>
+			  <input type="text" class="form-control input-lg" id="AP1" name="AP1"  placeholder="Cafálico cm" required>
 
 			</div>
 
@@ -2345,7 +2166,7 @@ Antropometría PERMÍMETROS
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Cuello cm" required>
+			  <input type="text" class="form-control input-lg" id="AP2" name="AP2"  placeholder="Cuello cm" required>
 
 			</div>
 
@@ -2353,7 +2174,7 @@ Antropometría PERMÍMETROS
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Mitad de Brazo Relajado cm" required>
+			  <input type="text" class="form-control input-lg" id="AP3" name="AP3"  placeholder="Mitad de Brazo Relajado cm" required>
 
 			</div>
 
@@ -2361,7 +2182,7 @@ Antropometría PERMÍMETROS
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Mitad de Brazo Contraido cm" required>
+			  <input type="text" class="form-control input-lg" id="AP4" name="AP4"  placeholder="Mitad de Brazo Contraido cm" required>
 
 			</div>
 
@@ -2370,7 +2191,7 @@ Antropometría PERMÍMETROS
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Antrbrazo cm" required>
+			  <input type="text" class="form-control input-lg" id="AP5" name="AP5"  placeholder="Antrbrazo cm" required>
 
 			</div>
 
@@ -2378,7 +2199,7 @@ Antropometría PERMÍMETROS
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Muñeca cm" required>
+			  <input type="text" class="form-control input-lg" id="AP6" name="AP6"  placeholder="Muñeca cm" required>
 
 			</div>
 
@@ -2386,7 +2207,7 @@ Antropometría PERMÍMETROS
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Meso esternal cm" required>
+			  <input type="text" class="form-control input-lg" id="AP7" name="AP7"  placeholder="Meso esternal cm" required>
 
 			</div>
 
@@ -2394,7 +2215,7 @@ Antropometría PERMÍMETROS
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Umbilical cm" required>
+			  <input type="text" class="form-control input-lg" id="AP8" name="AP8"  placeholder="Umbilical cm" required>
 
 			</div>
 
@@ -2402,22 +2223,14 @@ Antropometría PERMÍMETROS
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Cintura cm" required>
+			  <input type="text" class="form-control input-lg"  id="AP9" name="AP9"  placeholder="Cintura cm" required>
 
 			</div>
 			<div class="input-group">
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Cadera cm" required>
-
-			</div>
-
-			<div class="input-group">
-              
-			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
-
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Muslo cm" required>
+			  <input type="text" class="form-control input-lg"  id="AP10" name="AP10"  placeholder="Cadera cm" required>
 
 			</div>
 
@@ -2425,7 +2238,7 @@ Antropometría PERMÍMETROS
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Muslo medio cm" required>
+			  <input type="text" class="form-control input-lg" id="AP11" name="AP11"  placeholder="Muslo cm" required>
 
 			</div>
 
@@ -2433,7 +2246,7 @@ Antropometría PERMÍMETROS
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Pantorrilla cm" required>
+			  <input type="text" class="form-control input-lg" id="AP12" name="AP12"  placeholder="Muslo medio cm" required>
 
 			</div>
 
@@ -2441,36 +2254,19 @@ Antropometría PERMÍMETROS
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Tobillo cm" required>
+			  <input type="text" class="form-control input-lg" id="AP13" name="AP13"  placeholder="Pantorrilla cm" required>
 
 			</div>
 
-			<div class="modal-footer">
+			<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+			  <input type="text" class="form-control input-lg" id="AP14" name="AP14"  placeholder="Tobillo cm" required>
 
-<button type="submit" class="btn btn-primary  background-color: #8064A2">Guardar Datos</button>
+			</div>
 
-</div>
-
-	
-		</div>
-	</div>
-</div>
-
-
-
-<!-------->
-
-
-<!--======================
-Antropometría Diametros
-==============================-->
-
-<div class="modal fade" id="Diamétros" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-		<div class="modal-header" style="background:#3c8dbc; color:white">
+			<div class="modal-header" style="background:#3c8dbc; color:white">
 
 <button type="button" class="close" data-dismiss="modal">&times;</button>
 
@@ -2493,7 +2289,7 @@ Antropometría Diametros
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Briacromial cm" required>
+			  <input type="text" class="form-control input-lg" id="AD1" name="AD1" placeholder="Briacromial cm" required>
 
 			</div>
 
@@ -2502,7 +2298,7 @@ Antropometría Diametros
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Bi ileocrestal cm" required>
+			  <input type="text" class="form-control input-lg" id="AD2" name="AD2" placeholder="Bi ileocrestal cm" required>
 
 			</div>
 
@@ -2510,7 +2306,7 @@ Antropometría Diametros
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Longitud de Pie cm" required>
+			  <input type="text" class="form-control input-lg" id="AD3" name="AD3" placeholder="Longitud de Pie cm" required>
 
 			</div>
 
@@ -2518,7 +2314,7 @@ Antropometría Diametros
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Transverso de tórax cm" required>
+			  <input type="text" class="form-control input-lg" id="AD4" name="AD4" placeholder="Transverso de tórax cm" required>
 
 			</div>
 
@@ -2527,7 +2323,7 @@ Antropometría Diametros
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Antero posterior del Torax cm" required>
+			  <input type="text" class="form-control input-lg" id="AD5" name="AD5" placeholder="Antero posterior del Torax cm" required>
 
 			</div>
 
@@ -2535,7 +2331,7 @@ Antropometría Diametros
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Bi Epicóndilo del Húmero cm" required>
+			  <input type="text" class="form-control input-lg"  id="AD6" name="AD6" placeholder="Bi Epicóndilo del Húmero cm" required>
 
 			</div>
 
@@ -2543,7 +2339,7 @@ Antropometría Diametros
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Bi Estiloides de la Muñeca cm" required>
+			  <input type="text" class="form-control input-lg" id="AD7" name="AD7" placeholder="Bi Estiloides de la Muñeca cm" required>
 
 			</div>
 
@@ -2551,7 +2347,7 @@ Antropometría Diametros
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="BI Maleolar cm" required>
+			  <input type="text" class="form-control input-lg"  id="AD8" name="AD8" placeholder="BI Maleolar cm" required>
 
 			</div>
 
@@ -2559,14 +2355,14 @@ Antropometría Diametros
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Transverso de Pie cm" required>
+			  <input type="text" class="form-control input-lg" id="AD9" name="AD9" placeholder="Transverso de Pie cm" required>
 
 			</div>
 			<div class="input-group">
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Longitud de Manos cm" required>
+			  <input type="text" class="form-control input-lg" id="AD10" name="AD10" placeholder="Longitud de Manos cm" required>
 
 			</div>
 
@@ -2574,11 +2370,9 @@ Antropometría Diametros
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Transverso de la Mano cm" required>
+			  <input type="text" class="form-control input-lg" id="AD11" name="AD11" placeholder="Transverso de la Mano cm" required>
 
 			</div>
-
-
 			<div class="modal-footer">
 
 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
@@ -2587,6 +2381,16 @@ Antropometría Diametros
 
 </div>
 
+<?php
+
+  $crearAntropometria = new ControladorAntropometria();
+  $crearAntropometria -> ctrCrearAntropometria();
+
+?>
+
+</form>
+
+
 	
 		</div>
 	</div>
@@ -2594,9 +2398,39 @@ Antropometría Diametros
 
 
 
+
+
+<!----
+==============================
+Bioimpedancia Antropometría
+============================-->
+
+
+
+
+
+<!----
+==============================
+Bioimpedancia Antropometría
+============================-->
+
+
+<!--===============================-->
+
+
+
+
+
+<!-------->
+
+
+
+
 <!---
 Qumica Sanguinea
 ==============================-->
+
+<form role="form" method="post">
 
 <div class="modal fade" id="Sanguinea" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
@@ -2624,7 +2458,7 @@ Qumica Sanguinea
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Glucosa en ayuno Valor mg/dl Rango 65-100" required>
+			  <input type="text" class="form-control input-lg"  id="B1" name="B1" placeholder="Glucosa en ayuno Valor mg/dl Rango 65-100" required>
 
 			</div>
 
@@ -2633,7 +2467,7 @@ Qumica Sanguinea
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Glucosa 1 Hora despues de la ingesta mg/dl 110-135" required>
+			  <input type="text" class="form-control input-lg" id="B2" name="B2"  placeholder="Glucosa 1 Hora despues de la ingesta mg/dl 110-135" required>
 
 			</div>
 
@@ -2641,7 +2475,7 @@ Qumica Sanguinea
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Glucosa 2 horas despues de la ingesta mg/dl 70-120" required>
+			  <input type="text" class="form-control input-lg"  id="B3" name="B3" placeholder="Glucosa 2 horas despues de la ingesta mg/dl 70-120" required>
 
 			</div>
 
@@ -2649,7 +2483,7 @@ Qumica Sanguinea
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Hemoglobina glucosilada (HbAlc) % 5-6" required>
+			  <input type="text" class="form-control input-lg"  id="B4" name="B4"  placeholder="Hemoglobina glucosilada (HbAlc) % 5-6" required>
 
 			</div>
 
@@ -2658,7 +2492,7 @@ Qumica Sanguinea
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Creatina mg/dl 0.6 - 12" required>
+			  <input type="text" class="form-control input-lg"  id="B5" name="B5" placeholder="Creatina mg/dl 0.6 - 12" required>
 
 			</div>
 
@@ -2666,7 +2500,7 @@ Qumica Sanguinea
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Ulea mg/dl 10-40" required>
+			  <input type="text" class="form-control input-lg" id="B6" name="B6" placeholder="Ulea mg/dl 10-40" required>
 
 			</div>
 
@@ -2674,7 +2508,7 @@ Qumica Sanguinea
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="BUN mg/dl  6-20" required>
+			  <input type="text" class="form-control input-lg"  id="B7" name="B7" placeholder="BUN mg/dl  6-20" required>
 
 			</div>
 
@@ -2682,37 +2516,17 @@ Qumica Sanguinea
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Albumina g/dl 35-5" required>
+			  <input type="text" class="form-control input-lg"  id="B8" name="B8" placeholder="Albumina g/dl 35-5" required>
 
 			</div>
 
-		
-
-			<div class="modal-footer">
-
-<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
-
-<button type="submit" class="btn btn-primary  background-color: #8064A2">Guardar Datos</button>
-
-</div>
-
-	
-		</div>
-	</div>
-</div>
-
-
-
-<!-------->
 
 <!----==========================
 Bioquimicos Electrolitos
-==============================-->
+==============================-->	
 
-<div class="modal fade" id="Electrolitos" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-		<div class="modal-header" style="background:#3c8dbc; color:white">
+
+<div class="modal-header" style="background:#3c8dbc; color:white">
 
 <button type="button" class="close" data-dismiss="modal">&times;</button>
 
@@ -2735,7 +2549,7 @@ Bioquimicos Electrolitos
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Sodio MEq/L 136 - 145" required>
+			  <input type="text" class="form-control input-lg" id="B9" name="B9" placeholder="Sodio MEq/L 136 - 145" required>
 
 			</div>
 
@@ -2744,7 +2558,7 @@ Bioquimicos Electrolitos
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Calcio mg/dl 9-11" required>
+			  <input type="text" class="form-control input-lg" id="B10" name="B10" placeholder="Calcio mg/dl 9-11" required>
 
 			</div>
 
@@ -2752,7 +2566,7 @@ Bioquimicos Electrolitos
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Potacio MEq/L 3.5 - 5.5" required>
+			  <input type="text" class="form-control input-lg" id="B11" name="B11" placeholder="Potacio MEq/L 3.5 - 5.5" required>
 
 			</div>
 
@@ -2760,19 +2574,17 @@ Bioquimicos Electrolitos
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Fósforo mg/dl 2.3 - 4.7" required>
+			  <input type="text" class="form-control input-lg" id="B12" name="B12" placeholder="Fósforo mg/dl 2.3 - 4.7" required>
 
 			</div>
 
+			<BR>
 
-			<div class="input-group">
-              
-			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
+<!----==========================
+Biometría  Hemática
+==============================-->
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Cloro MEq/L 95-105" required>
-
-			</div>
-
+		
 
 			<div class="modal-footer">
 
@@ -2786,6 +2598,8 @@ Bioquimicos Electrolitos
 		</div>
 	</div>
 </div>
+
+
 
 
 
@@ -2820,7 +2634,7 @@ Biometría  Hemática
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Eritrocitos M/NL  4.2 - 6.2" required>
+			  <input type="text" class="form-control input-lg" id="B13" name="B13" placeholder="Eritrocitos M/NL  4.2 - 6.2" required>
 
 			</div>
 
@@ -2829,7 +2643,7 @@ Biometría  Hemática
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Concentración de Hemoglobina g/dl 14-17" required>
+			  <input type="text" class="form-control input-lg"  id="B14" name="B14" placeholder="Concentración de Hemoglobina g/dl 14-17" required>
 
 			</div>
 
@@ -2837,7 +2651,7 @@ Biometría  Hemática
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Hematocrito mg/dl  37-47" required>
+			  <input type="text" class="form-control input-lg" id="B15" name="B15" placeholder="Hematocrito mg/dl  37-47" required>
 
 			</div>
 
@@ -2845,40 +2659,7 @@ Biometría  Hemática
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Volumen Corpuscular Medio fl 90-99" required>
-
-			</div>
-
-
-			<div class="input-group">
-              
-			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
-
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Hemoglobina Corpuscular Medio fl 90-99" required>
-
-			</div>
-
-			<div class="input-group">
-              
-			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
-
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Leucocitos k/NL 4.8- 11.8" required>
-
-			</div>
-
-			<div class="input-group">
-              
-			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
-
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Linfoncitos %M  4-8" required>
-
-			</div>
-
-			<div class="input-group">
-              
-			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
-
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Eosinfolios %E  0.5 - 4" required>
+			  <input type="text" class="form-control input-lg" id="B16" name="B16" placeholder="Volumen Corpuscular Medio fl 90-99" required>
 
 			</div>
 
@@ -2887,7 +2668,31 @@ Biometría  Hemática
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Basófilos  %B  0 - 1.5" required>
+			  <input type="text" class="form-control input-lg" id="B17" name="B17" placeholder="Hemoglobina Corpuscular Medio fl 90-99" required>
+
+			</div>
+
+			<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
+
+			  <input type="text" class="form-control input-lg" id="B18" name="B18" placeholder="Leucocitos k/NL 4.8- 11.8" required>
+
+			</div>
+
+			<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
+
+			  <input type="text" class="form-control input-lg" id="B19" name="B19" placeholder="Linfoncitos %M  4-8" required>
+
+			</div>
+
+			<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
+
+			  <input type="text" class="form-control input-lg" id="B20" name="B20" placeholder="Eosinfolios %E  0.5 - 4" required>
 
 			</div>
 
@@ -2896,7 +2701,16 @@ Biometría  Hemática
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Neutrofilos segmentados %NS  60 - 65" required>
+			  <input type="text" class="form-control input-lg" id="B21" name="B21" placeholder="Basófilos  %B  0 - 1.5" required>
+
+			</div>
+
+
+			<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
+
+			  <input type="text" class="form-control input-lg" id="B23" name="B23" placeholder="Neutrofilos segmentados %NS  60 - 65" required>
 
 			</div>
 
@@ -2904,44 +2718,127 @@ Biometría  Hemática
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Plaquetas k/NL   150,000 a 400,000" required>
+			  <input type="text" class="form-control input-lg" id="B24" name="B24" placeholder="Plaquetas k/NL   150,000 a 400,000" required>
 
 			</div>
 
-			<div class="modal-footer">
+			<div class="modal-header" style="background:#3c8dbc; color:white">
 
-<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+<button type="button" class="close" data-dismiss="modal">&times;</button>
 
-<button type="submit" class="btn btn-primary  background-color: #8064A2">Guardar Datos</button>
+<h4 class="modal-title">Biometría Hemática</h4>
 
 </div>
+
+<br>
+
+<div class="input-group" >
+
+
+      </div>
 
 	
-		</div>
-	</div>
-</div>
+<br>
+	  
+
+	  <div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
+
+			  <input type="text" class="form-control input-lg" id="B25" name="B25" placeholder="Eritrocitos M/NL  4.2 - 6.2" required>
+
+			</div>
 
 
+			<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
+
+			  <input type="text" class="form-control input-lg"  id="B26" name="B26" placeholder="Concentración de Hemoglobina g/dl 14-17" required>
+
+			</div>
+
+			<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
+
+			  <input type="text" class="form-control input-lg" id="B27" name="B27" placeholder="Hematocrito mg/dl  37-47" required>
+
+			</div>
+
+			<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
+
+			  <input type="text" class="form-control input-lg" id="B28" name="B28" placeholder="Volumen Corpuscular Medio fl 90-99" required>
+
+			</div>
 
 
+			<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
+
+			  <input type="text" class="form-control input-lg" id="B29" name="B29" placeholder="Hemoglobina Corpuscular Medio fl 90-99" required>
+
+			</div>
+
+			<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
+
+			  <input type="text" class="form-control input-lg" id="B30" name="B30" placeholder="Leucocitos k/NL 4.8- 11.8" required>
+
+			</div>
+
+			<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
+
+			  <input type="text" class="form-control input-lg" id="B31" name="B31" placeholder="Linfoncitos %M  4-8" required>
+
+			</div>
+
+			<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
+
+			  <input type="text" class="form-control input-lg" id="B32" name="B32" placeholder="Eosinfolios %E  0.5 - 4" required>
+
+			</div>
 
 
+			<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
+
+			  <input type="text" class="form-control input-lg" id="B33" name="B33" placeholder="Basófilos  %B  0 - 1.5" required>
+
+			</div>
 
 
+			<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
+
+			  <input type="text" class="form-control input-lg" id="B34" name="B34" placeholder="Neutrofilos segmentados %NS  60 - 65" required>
+
+			</div>
+
+			<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
+
+			  <input type="text" class="form-control input-lg" id="B35" name="B35" placeholder="Plaquetas k/NL   150,000 a 400,000" required>
+
+			</div>
+
+			<!----==========================
+                  Lipidos
+            ==============================-->
 
 
-
-
-
-
-<!----==========================
-Lipidos
-==============================-->
-
-<div class="modal fade" id="Lipidos" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-		<div class="modal-header" style="background:#3c8dbc; color:white">
+			<div class="modal-header" style="background:#3c8dbc; color:white">
 
 <button type="button" class="close" data-dismiss="modal">&times;</button>
 
@@ -2964,7 +2861,7 @@ Lipidos
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Colesterol total mg/dl 120 - 199" required>
+			  <input type="text" class="form-control input-lg"  placeholder="Colesterol total mg/dl 120 - 199" required>
 
 			</div>
 
@@ -2973,7 +2870,7 @@ Lipidos
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Colesterol HDL mg/dl 50 - 60" required>
+			  <input type="text" class="form-control input-lg"  id="B36" name="B36" placeholder="Colesterol HDL mg/dl 50 - 60" required>
 
 			</div>
 
@@ -2981,7 +2878,7 @@ Lipidos
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Colesterol LDL mg/dl 65 - 150" required>
+			  <input type="text" class="form-control input-lg" id="B37" name="B37" placeholder="Colesterol LDL mg/dl 65 - 150" required>
 
 			</div>
 
@@ -2989,7 +2886,7 @@ Lipidos
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Colesterol VLDL  mg/dl 5-40" required>
+			  <input type="text" class="form-control input-lg" id="B38" name="B38" placeholder="Colesterol VLDL  mg/dl 5-40" required>
 
 			</div>
 
@@ -2998,7 +2895,7 @@ Lipidos
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Triglicéridos mg/dl  90 - 160" required>
+			  <input type="text" class="form-control input-lg" id="B39" name="B39" placeholder="Triglicéridos mg/dl  90 - 160" required>
 
 			</div>
 
@@ -3006,40 +2903,12 @@ Lipidos
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Lipidos Totales mg/dl 450 - 1000" required>
+			  <input type="text" class="form-control input-lg" id="B40" name="B40" placeholder="Lipidos Totales mg/dl 450 - 1000" required>
 
 			</div>
 
-		
 
-
-		
-
-			<div class="modal-footer">
-
-<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
-
-<button type="submit" class="btn btn-primary  background-color: #8064A2">Guardar Datos</button>
-
-</div>
-
-	
-		</div>
-	</div>
-</div>
-
-
-
-
-
-<!----==========================
-Orina
-==============================-->
-
-<div class="modal fade" id="Orina" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-		<div class="modal-header" style="background:#3c8dbc; color:white">
+			<div class="modal-header" style="background:#3c8dbc; color:white">
 
 <button type="button" class="close" data-dismiss="modal">&times;</button>
 
@@ -3062,7 +2931,7 @@ Orina
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="PH  mg/dl 5-7 " required>
+			  <input type="text" class="form-control input-lg" id="B41" name="B41" placeholder="PH  mg/dl 5-7 " required>
 
 			</div>
 
@@ -3071,7 +2940,7 @@ Orina
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Proteinas  mg/dl 30-150" required>
+			  <input type="text" class="form-control input-lg" id="B42" name="B42" placeholder="Proteinas  mg/dl 30-150" required>
 
 			</div>
 
@@ -3080,7 +2949,7 @@ Orina
           
           <span class="input-group-addon"><i class="fa fa-heartbeat" aria-hidden="true"></i></span>
         
-          <select class="form-control input-lg" id="Fa" name="Fa" required>
+          <select class="form-control input-lg" id="B43" name="B43" required>
             <option value="">Glucosa</option>
          
             <option value="Positivo">Positivo</option>
@@ -3096,7 +2965,7 @@ Orina
           
           <span class="input-group-addon"><i class="fa fa-heartbeat" aria-hidden="true"></i></span>
         
-          <select class="form-control input-lg" id="Fa" name="Fa" required>
+          <select class="form-control input-lg" id="B44" name="B44" required>
             <option value="">Bilirrubina</option>
          
             <option value="Positivo">Positivo</option>
@@ -3110,7 +2979,7 @@ Orina
           
           <span class="input-group-addon"><i class="fa fa-heartbeat" aria-hidden="true"></i></span>
         
-          <select class="form-control input-lg" id="Fa" name="Fa" required>
+          <select class="form-control input-lg" id="B45" name="B45" required>
             <option value="">Nitritos</option>
          
             <option value="Positivo">Positivo</option>
@@ -3126,7 +2995,7 @@ Orina
           
           <span class="input-group-addon"><i class="fa fa-heartbeat" aria-hidden="true"></i></span>
         
-          <select class="form-control input-lg" id="Fa" name="Fa" required>
+          <select class="form-control input-lg" id="B47" name="B47" required>
             <option value="">Cuerpos Cetonicos</option>
          
             <option value="Positivo">Positivo</option>
@@ -3140,7 +3009,7 @@ Orina
           
           <span class="input-group-addon"><i class="fa fa-heartbeat" aria-hidden="true"></i></span>
         
-          <select class="form-control input-lg" id="Fa" name="Fa" required>
+          <select class="form-control input-lg" id="B48" name="B48" required>
             <option value="">Hemoglobina </option>
          
             <option value="Positivo">Positivo</option>
@@ -3150,7 +3019,9 @@ Orina
       </div>
 		
 
-			<div class="modal-footer">
+
+		
+	  <div class="modal-footer">
 
 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
 
@@ -3158,12 +3029,30 @@ Orina
 
 </div>
 
+<?php
+
+  $crearBioquimicos = new ControladorBioquimicos();
+  $crearBioquimicos -> ctrCrearBioquimicos();
+
+?>
+
+</form>
+
+
 	
 		</div>
 	</div>
 </div>
 
 
+
+
+
+
+
+
+
+<form role="form" method="post">
 <!--- ====================================
 Clinico
 =========================================
@@ -3172,15 +3061,7 @@ Clinico
 <div class="modal fade" id="Clinico" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
-		<div class="modal-header" style="background:#3c8dbc; color:white">
 
-<button type="button" class="close" data-dismiss="modal">&times;</button>
-
-<h4 class="modal-title">Sístemas urinario</h4>
-
-</div>
-
-<br>
 
 <div class="input-group" >
 
@@ -3198,74 +3079,129 @@ Clinico
 	  <div class="custom-control custom-checkbox">
 
 
-	  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-    <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-	<label class="custom-control-label" for="defaultUnchecked">Disuria</label>
-	
-	&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Dolor de Riñones</label>
+	  <div class="modal-header" style="background:#3c8dbc; color:white">
 
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Oliguria</label>
-<br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Pielonefritis</label>
+<button type="button" class="close" data-dismiss="modal">&times;</button>
 
-&nbsp &nbsp&nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Poliuria</label>
+<h4 class="modal-title">Sistema Urinario</h4>
+
+</div>
+
 
 <br>
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Sindrome nefrotico</label>
 
+<div class="custom-control custom-checkbox">
 
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Sindrome nefritico</label>
-
-&nbsp &nbsp &nbsp&nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Litiasis</label>
-
-
-&nbsp &nbsp &nbsp&nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Enfermedad Renal Agudo</label>
-
-
-&nbsp &nbsp &nbsp&nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Enfermedad Renal Crónica</label>
-
-&nbsp &nbsp &nbsp&nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Nefrosis</label>
-
-&nbsp &nbsp &nbsp&nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Uretritis</label>
-
-
-&nbsp &nbsp &nbsp&nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Enuresis</label>
-
-&nbsp &nbsp &nbsp&nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Crititis</label>
 
 <div class="input-group">
               
-			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
+			  <span class="input-group-addon"><i class="fa fa-th"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Otro" required>
+			  <select class="form-control input-lg" id="Cita" name="Cita" required>
+				
+				<option value="">Selecionar Cita</option>
+
+				<?php
+
+				$item = null;
+				$valor = null;
+
+				$categorias = ControladorCategorias::ctrMostrarCategorias($item, $valor);
+
+				foreach ($categorias as $key => $value) {
+				  
+				  echo '<option value="'.$value["categoria"].'">'.$value["categoria"].'</option>';
+				}
+
+				?>
+
+			  </select>
 
 			</div>
+
+<br>
+
+<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+
+			  <select class="form-control input-lg" id="Paciente" name="Paciente" required>
+				
+				<option value="">Selecionar Nombre del Paciente</option>
+
+				<?php
+
+				$item = null;
+				$valor = null;
+
+				$clientes = ControladorClientes::ctrMostrarClientes($item, $valor);
+
+				foreach ($clientes as $key => $value) {
+				  
+				  echo '<option value="'.$value["nombre"].'">'.$value["nombre"].'</option>';
+				}
+
+				?>
+
+			  </select>
+
+			</div>
+
+
+<br>
+
+<div class="checkbox">
+  &nbsp &nbsp &nbsp &nbsp 
+  <label><input type="checkbox" name="SU21[]" value="Disuria">Disuria</label>
+  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp 
+  <label><input type="checkbox" name="SU21[]" value="Dolor de Riñones">Dolor de Riñones</label>
+  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp 
+  <label><input type="checkbox" name="SU21[]" value="Oliguria">Oliguria</label>
+  &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+  <label><input type="checkbox" name="SU21[]" value="Pielonefritis">Pielonefritis</label>
+  
+  <br>
+   &nbsp &nbsp &nbsp &nbsp
+  <label><input type="checkbox" name="SU21[]" value="Poliuria">Poliuria</label>
+   &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp 
+  <label><input type="checkbox" name="SU21[]" value="Sindrome Neofrotico">Sindrome Neofrotico</label>
+   &nbsp &nbsp &nbsp &nbsp&nbsp
+  <label><input type="checkbox" name="SU21[]" value="Sindrome Nefritico">Sindrome Nefritico</label>
+  
+  <br>
+  &nbsp &nbsp &nbsp &nbsp 
+  <label><input type="checkbox" name="SU21[]" value="Litiasis">Litiasis</label>
+ &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp 
+  <label><input type="checkbox" name="SU21[]" value="Enfermedad Renal Agudo">Enfermedad Renal Agudo</label>
+  <label><input type="checkbox" name="SU21[]" value="Enfermedad Renal Cronica">Enfermedad Renal Cronica</label>
+ <br>
+ &nbsp &nbsp &nbsp &nbsp 
+  <label><input type="checkbox" name="SU21[]" value="Nefrosis">Nefrosis</label>
+  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp 
+  <label><input type="checkbox" name="SU21[]" value="Uretritis">Uretritis</label>
+  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+  <label><input type="checkbox" name="SU21[]" value="Enuresis">Enuresis</label>
+ &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+  <label><input type="checkbox" name="SU21[]" value="Crititis">Crititis</label>
+
+  <div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
+
+			  <input type="text" class="form-control input-lg" id="SU21[]" name="SU21[]" placeholder="Otro">
+
+			</div>
+
+</div>
+
+
+
+	</div>
+
+
+
+
+
 
 </div>
 
@@ -3283,76 +3219,60 @@ Clinico
 <div class="custom-control custom-checkbox">
 
 
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Angina de Pecho</label>
+<div class="checkbox">
+  &nbsp &nbsp &nbsp &nbsp 
+  <label><input type="checkbox" name="SC21[]" value="Angina de Pecho">Angina de Pecho</label>
+  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp 
+  <label><input type="checkbox" name="SC21[]" value="Antecedentes de Infarto">Antecedentes de Infarto</label>
+  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp 
+  <label><input type="checkbox" name="SC21[]" value="Atereoesclerosis">Ateroesclerosis</label>
+  
+  <br>
+   &nbsp &nbsp &nbsp &nbsp
+  <label><input type="checkbox" name="SC21[]" value="Cardiomegalia">Cardiomegalia</label>
+   &nbsp &nbsp &nbsp &nbsp   &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp  
+  <label><input type="checkbox" name="SC21[]" value="Dolor Precordial">Dolor Precordial</label>
+   &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+  <label><input type="checkbox" name="SC21[]" value="Flebodimia">Flebodimia</label>
+ <br>
+ 
+   &nbsp &nbsp &nbsp &nbsp
+  <label><input type="checkbox" name="SC21[]" value="Hipercolesterolemia">Hipercolesterolemia</label>
+  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+  <label><input type="checkbox" name="SC21[]" value="Hipertrigliceridemia">Hipertrigliceridemia</label>
+ &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp 
+  <label><input type="checkbox" name="SC21[]" value="Hipotension">Hipotension</label>
+ 
+  <br>
+  &nbsp &nbsp &nbsp &nbsp
+  <label><input type="checkbox" name="SC21[]" value="Hipertension">Hipertension</label>
+  &nbsp &nbsp &nbsp &nbsp   &nbsp &nbsp &nbsp &nbsp    &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp&nbsp
+  <label><input type="checkbox" name="SC21[]" value="Taquicardia">Taquicardia</label>
+  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp  
+  <label><input type="checkbox" name="SC21[]" value="Insuficiencia Cardiaca">Insuficiencia Cardiaca</label>
+ <BR>
+  &nbsp &nbsp &nbsp &nbsp
+  <label><input type="checkbox" name="SC21[]" value="Arritmias">Arritmias</label>
 
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Antecedentes de Infarto</label>
-
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Ateroesclerosis</label>
-
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Cardiomegalia</label>
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Dolor Precordial</label>
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Flebodimia</label>
-
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Hipercolesterolemia</label>
-
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Hipertrigliceridemia</label>
-
-
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Hipotension</label>
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Hipertension</label>
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Taquicardia</label>
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Insuficiencia Cardiaca</label>
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Arritmias</label>
-
-
-	</div>
-<br>
-
-	<div class="input-group">
+  <div class="input-group">
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Otro" required>
+			  <input type="text" class="form-control input-lg" id="SC21[]" name="SC21[]" placeholder="Otro">
 
 			</div>
-	<br>
+
+			
+
+
+</div>
+
+
+
+	</div>
+
+
+
 
 
 	<div class="modal-header" style="background:#3c8dbc; color:white">
@@ -3365,246 +3285,184 @@ Clinico
 
 
 <br>
+<br>
 
 <div class="custom-control custom-checkbox">
 
 
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Acidez estomacal</label>
-
- &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp&nbsp
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Colitis</label>
-
-
-&nbsp &nbsp &nbsp&nbsp&nbsp
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Colon irritable</label>
-
-<br>
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp&nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Diarrea</label>
-
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Distensión abdominal</label>
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Dolor de abdomen</label>
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Estreñimiento</label>
+<div class="checkbox">
+  &nbsp &nbsp &nbsp &nbsp 
+  <label><input type="checkbox" name="SD21[]" value="Angina de Pecho">Angina de Pecho</label>
+  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp 
+  <label><input type="checkbox" name="SD21[]" value="Antecedentes de Infarto">Antecedentes de Infarto</label>
+  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp 
+  <label><input type="checkbox" name="SD21[]" value="Atereoesclerosis">Ateroesclerosis</label>
+  
+  <br>
+   &nbsp &nbsp &nbsp &nbsp
+  <label><input type="checkbox" name="SD21[]" value="Cardiomegalia">Cardiomegalia</label>
+   &nbsp &nbsp &nbsp &nbsp   &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp  
+  <label><input type="checkbox" name="SD21[]" value="Dolor Precordial">Dolor Precordial</label>
+   &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+  <label><input type="checkbox" name="SD21[]" value="Flebodimia">Flebodimia</label>
+ <br>
  
+   &nbsp &nbsp &nbsp &nbsp
+  <label><input type="checkbox" name="SD21[]" value="Hipercolesterolemia">Hipercolesterolemia</label>
+  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+  <label><input type="checkbox" name="SD21[]" value="Hipertrigliceridemia">Hipertrigliceridemia</label>
+ &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp 
+  <label><input type="checkbox" name="SD21[]" value="Hipotension">Hipotension</label>
+ 
+  <br>
+  &nbsp &nbsp &nbsp &nbsp
+  <label><input type="checkbox" name="SD21[]" value="Hipertension">Hipertension</label>
+  &nbsp &nbsp &nbsp &nbsp   &nbsp &nbsp &nbsp &nbsp    &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp&nbsp
+  <label><input type="checkbox" name="SD21[]" value="Taquicardia">Taquicardia</label>
+  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp  
+  <label><input type="checkbox" name="SD21[]" value="Insuficiencia Cardiaca">Insuficiencia Cardiaca</label>
+ <BR>
+  &nbsp &nbsp &nbsp &nbsp
+  <label><input type="checkbox" name="SD21[]" value="Arritmias">Arritmias</label>
 
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Gastritis</label>
-
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Hemorroides</label>
-
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Nauseas</label>
-
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Reflujo Gastroesofágico</label>}
-
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Ulceras</label>
-
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Vómito</label>
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Enfermedad de Crohn</label>
-
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Intestino Corto</label>
-
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Ulcera peptica</label>
-
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Hernia de Hiato</label>
-
-<div class="input-group">
+  <div class="input-group">
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Otro" required>
+			  <input type="text" class="form-control input-lg" id="SD21[]" name="SD21[]" placeholder="Otro">
 
 			</div>
 
+			
+
+
+</div>
+
+
+
 	</div>
 
-	<div class="modal-header" style="background:#3c8dbc; color:white">
+
+<!---->
+<div class="custom-control custom-checkbox">
+
+<div class="modal-header" style="background:#3c8dbc; color:white">
 
 <button type="button" class="close" data-dismiss="modal">&times;</button>
 
 <h4 class="modal-title">Boca</h4>
-
 </div>
+<div class="checkbox">
+  &nbsp &nbsp &nbsp &nbsp 
+  <label><input type="checkbox" name="SB21[]" value="Cicatrices Angulares">Cicatrices Angulares</label>
+  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp    &nbsp &nbsp  &nbsp &nbsp &nbsp
+  <label><input type="checkbox" name="SB21[]" value="Edema de Lengua">Edema de Lengua</label> &nbsp  &nbsp &nbsp &nbsp   &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp 
+  <label><input type="checkbox" name="SB21[]" value="Esmalte Moteado">Esmalte Moteado</label>
+   <br>
+   &nbsp &nbsp &nbsp &nbsp
+  <label><input type="checkbox" name="SB21[]" value="Encias inflamadas hemorragias">Encias inflamadas hemorragias</label>
+  &nbsp&nbsp
+  <label><input type="checkbox" name="SB21[]" value="Estomatitis">Estomatitis</label> 
+  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp      
+  <label><input type="checkbox" name="SB21[]" value="Glositis">Glositis</label>
+  <br>
+   &nbsp &nbsp &nbsp &nbsp  
+  <label><input type="checkbox" name="SB21[]" value="Lengua Magenta">Lengua Magenta</label>
 
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Cicatrises Angulares</label>
+ 
+   &nbsp &nbsp &nbsp &nbsp    &nbsp &nbsp &nbsp &nbsp    &nbsp &nbsp &nbsp &nbsp   &nbsp &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp
+  <label><input type="checkbox" name="SB21[]" value="Papilas Filiformes atróficas">Papilas Filiformes atróficas</label>
+  <br> &nbsp &nbsp &nbsp&nbsp&nbsp  
+  <label><input type="checkbox" name="SB21[]" value="Problemas de eglución">Problemas de eglución</label>
+ &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp      
+  <label><input type="checkbox" name="SB21[]" value="Problemas de Masticación">Problemas de Masticación</label>
+ <br>
+  &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp
+  <label><input type="checkbox" name="SB21[]" value="Problemas de Salivación">Problemas de Salivación</label>
+  &nbsp &nbsp &nbsp &nbsp   &nbsp &nbsp &nbsp &nbsp &nbsp
+  <label><input type="checkbox" name="SB21[]" value="Quelosis">Quelosis</label>
+    
+  <br>
+  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  <label><input type="checkbox" name="SB21[]" value="Uso de Placa dental">Uso de Placa dental</label>
+  &nbsp &nbsp &nbsp &nbsp  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 
+  &nbsp &nbsp &nbsp &nbsp  &nbsp&nbsp&nbsp
+     
 
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Edema de Lengua</label>
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Esmalte Moteado</label>
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Encias inflamadas hemorragias</label>
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Encias inflamadas hemorragias</label>
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Estomatitis</label>
-
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Glositis</label>
-
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Lengua Magenta</label>
-
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Papilas Filiformes atróficas</label>
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Problemas de eglución</label>
-
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Problemas de Masticación</label>
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Problemas de Salivación</label>
-
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Quelosis</label>
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Uso de Placa Dental</label>
-
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Falta de Piezas Dentales</label>
-
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Candiadisis Oral</label>
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Aftas</label>
-
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Herpes</label>
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Boca Seca</label> 
-
-<br>
-
-<div class="input-group">
+  <label><input type="checkbox" name="SB21[]" value="Falta de Piezas Dentales">Falta de Piezas Dentales</label>
+  <br>
+  &nbsp &nbsp &nbsp &nbsp 
+  <label><input type="checkbox" name="SB21[]" value="Candiadisis Oral">Candiadisis Oral</label>
+   &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp   &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp      
+  <label><input type="checkbox" name="SB21[]" value="Aftas">Aftas</label>
+  &nbsp &nbsp &nbsp &nbsp  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 
+  &nbsp &nbsp &nbsp &nbsp  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 
+  &nbsp &nbsp &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp   
+  <label><input type="checkbox" name="SB21[]" value="Herpes">Herpes</label>
+  <br>
+  &nbsp &nbsp &nbsp &nbsp    
+  <label><input type="checkbox" name="SB21[]" value="Boca Seca">Boca Seca</label>
+  <div class="input-group">
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Otro" required>
+			  <input type="text" class="form-control input-lg" id="SB21[]" name="SB21[]" placeholder="Otro">
 
 			</div>
 
-			<div class="modal-header" style="background:#3c8dbc; color:white">
+			
+
+
+</div>
+
+
+
+	</div>
+
+<!------>
+<div class="custom-control custom-checkbox">
+
+<div class="modal-header" style="background:#3c8dbc; color:white">
 
 <button type="button" class="close" data-dismiss="modal">&times;</button>
 
 <h4 class="modal-title">Cabello</h4>
 
 </div>
-	  <br>
-	  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Despigmentado</label> 
 
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Escaso</label> 
+<div class="checkbox">
+  &nbsp &nbsp &nbsp &nbsp 
+  <label><input type="checkbox" name="SCa21[]" value="Despigmentado">Despigmentado</label>
+  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp    &nbsp &nbsp  &nbsp &nbsp &nbsp
+  <label><input type="checkbox" name="SCa21[]" value="Escaso">Escaso</label> &nbsp  &nbsp &nbsp &nbsp   &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp 
+  <label><input type="checkbox" name="SCa21[]" value="Facil Desprendimiento">Facil Desprendimiento</label>
+   <br>
+   &nbsp &nbsp &nbsp &nbsp
+  <label><input type="checkbox" name="SCa21[]" value="Signo de Bandera">Signo de Bandera</label>
+  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp&nbsp  &nbsp   
+  <label><input type="checkbox" name="SCa21[]" value="Delgado">Delgado</label> &nbsp  
+  
 
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Facil Desprendimiento</label> 
-
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Signo de Bandera</label> 
-
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Delgado</label> 
-
-<div class="input-group">
+  <div class="input-group">
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Otro" required>
+			  <input type="text" class="form-control input-lg" id="SCa21[]" name="SCa21[]" placeholder="Otro">
 
 			</div>
+	
 
-			<div class="modal-footer">
+</div>
 
-			<div class="modal-header" style="background:#3c8dbc; color:white">
+
+
+	</div>
+
+	
+<!------>
+<div class="custom-control custom-checkbox">
+
+<div class="modal-header" style="background:#3c8dbc; color:white">
 
 <button type="button" class="close" data-dismiss="modal">&times;</button>
 
@@ -3612,51 +3470,44 @@ Clinico
 
 </div>
 
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Conjuntivitis</label> 
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Cataratas</label> 
-
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Presbicia</label> 
-
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Desprendimiento de Retina</label> 
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Gluocoma</label> 
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Retiropatia diabetica</label> 
+<div class="checkbox">
+  &nbsp &nbsp &nbsp &nbsp 
+  <label><input type="checkbox" name="S021[]" value="Conjuntivitis">Conjuntivitis</label>
+  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp    &nbsp &nbsp  &nbsp &nbsp &nbsp
+  <label><input type="checkbox" name="S021[]" value="Cataratas">Cataratas</label> &nbsp  &nbsp &nbsp &nbsp   &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp 
+  <label><input type="checkbox" name="S021[]" value="Presbicia">Presbicia</label>
+   <br>
+   &nbsp &nbsp &nbsp &nbsp
+  <label><input type="checkbox" name="S021[]" value="Desprendimiento de Retina">Desprendimiento de Retina</label>
+  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp&nbsp  &nbsp   &nbsp &nbsp  &nbsp &nbsp &nbsp  &nbsp &nbsp  &nbsp  
+  <label><input type="checkbox" name="S021[]" value="Gluocoma">Gluocoma</label> &nbsp  
+  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp&nbsp  &nbsp   &nbsp &nbsp  &nbsp &nbsp &nbsp  &nbsp &nbsp  &nbsp  
+  <label><input type="checkbox" name="S021[]" value="Retiropatia Diabetica">Retiropatia Diabetica</label> &nbsp  
+  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp&nbsp  &nbsp   &nbsp &nbsp  &nbsp &nbsp &nbsp  &nbsp &nbsp  &nbsp  
+  <label><input type="checkbox" name="S021[]" value="Astigmantismo">Astigmantismo</label> &nbsp  
+  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp  &nbsp &nbsp&nbsp  &nbsp   &nbsp &nbsp  &nbsp &nbsp &nbsp  &nbsp &nbsp  &nbsp  
+  <label><input type="checkbox" name="S021[]" value="Xeroftalmia">Gluocoma</label> &nbsp  
+  
 
 
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Astigmantismo</label> 
 
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Xeroftalmia</label> 
-<br>
-<div class="input-group">
+  <div class="input-group">
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Otro" required>
+			  <input type="text" class="form-control input-lg" id="S021[]" name="S021[]" placeholder="Otro">
 
 			</div>
+	
 
+</div>
+
+
+
+<!-------->
 <br>
 
+<div class="custom-control custom-checkbox">
 
 <div class="modal-header" style="background:#3c8dbc; color:white">
 
@@ -3665,105 +3516,105 @@ Clinico
 <h4 class="modal-title">Glandulas</h4>
 
 </div>
-<br>
 
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Hipertiroidismo</label> 
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Hipotiroidismo</label>  
-
-<br>
-
-<div class="input-group">
+<div class="checkbox">
+  &nbsp &nbsp &nbsp &nbsp 
+  <label><input type="checkbox" name="SG21[]" value="Hipertiroidismo">Hiportiroidismo</label>
+  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp    &nbsp &nbsp  &nbsp &nbsp &nbsp
+  <label><input type="checkbox" name="SG21[]" value="Hipertiroidismo">Hipertiroidismo</label> &nbsp  &nbsp &nbsp &nbsp   &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp 
+  
+  <div class="input-group">
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Otro" required>
+			  <input type="text" class="form-control input-lg" id="SG21[]" name="SG21[]" placeholder="Otro">
 
 			</div>
+	
 
-			<br>
+</div>
 
-			<div class="modal-header" style="background:#3c8dbc; color:white">
+</div>
+
+<!---->
+
+<div class="custom-control custom-checkbox">
+
+<div class="modal-header" style="background:#3c8dbc; color:white">
 
 <button type="button" class="close" data-dismiss="modal">&times;</button>
 
 <h4 class="modal-title">Piel</h4>
 
 </div>
-<br>
 
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Eczema</label>  
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Acné</label>  
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Osoriasis</label> 
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Alfrecia</label> 
-
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Urticaria</label> 
-
-
-<div class="input-group">
+<div class="checkbox">
+  &nbsp &nbsp &nbsp &nbsp 
+  <label><input type="checkbox" name="SP21[]" value="Eczema">Eczema</label>
+  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp    &nbsp &nbsp  &nbsp &nbsp &nbsp
+  <label><input type="checkbox" name="SP21[]" value="Acné">Acné</label> &nbsp  &nbsp &nbsp &nbsp   &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp 
+  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp    &nbsp &nbsp  &nbsp &nbsp &nbsp
+  <label><input type="checkbox" name="SP21[]" value="Osoriasis">Osoriasis</label> &nbsp  &nbsp &nbsp &nbsp   &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp 
+  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp    &nbsp &nbsp  &nbsp &nbsp &nbsp
+  <label><input type="checkbox" name="SP21[]" value="Alfrecia">Alfrecia</label> &nbsp  &nbsp &nbsp &nbsp   &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp 
+  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp    &nbsp &nbsp  &nbsp &nbsp &nbsp
+  <label><input type="checkbox" name="SP21[]" value="Urticaria">Urticaria</label> &nbsp  &nbsp &nbsp &nbsp   &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp 
+  
+  <div class="input-group">
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Otro" required>
+			  <input type="text" class="form-control input-lg" id="SP21[]" name="SP21[]" placeholder="Otro">
 
 			</div>
-<br>
+	
 
+</div>
+
+</div>
+
+<!---->
+
+
+
+			<br>
+
+
+<!-------->
+<div class="custom-control custom-checkbox">
 
 <div class="modal-header" style="background:#3c8dbc; color:white">
 
 <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-<h4 class="modal-title">Intolerancia de Alimentos</h4>
+<h4 class="modal-title">Intolerancia a los Alimientos</h4>
 
 </div>
-<br>
 
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Lactosa</label> 
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Gluten</label> 
-
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Fenilalanina</label> 
-
-&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-<input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-<label class="custom-control-label" for="defaultUnchecked">Aditivos</label> 
-
-
-<br>
-
-<div class="input-group">
+<div class="checkbox">
+  &nbsp &nbsp &nbsp &nbsp 
+  <label><input type="checkbox" name="SIA21[]" value="Lactosa">Lactosa</label>
+  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp    &nbsp &nbsp  &nbsp &nbsp &nbsp
+  <label><input type="checkbox" name="SIA21[]" value="Gluten">Gluten</label> &nbsp  &nbsp &nbsp &nbsp   &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp 
+  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp    &nbsp &nbsp  &nbsp &nbsp &nbsp
+  <label><input type="checkbox" name="SIA21[]" value="Fenilalanina">Fenilalanina</label> &nbsp  &nbsp &nbsp &nbsp   &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp 
+  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp    &nbsp &nbsp  &nbsp &nbsp &nbsp
+  <label><input type="checkbox" name="SIA21[]" value="Aditivos">Aditivos</label> &nbsp  &nbsp &nbsp &nbsp   &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp 
+  
+  <div class="input-group">
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Otro" required>
+			  <input type="text" class="form-control input-lg" id="SIA21[]" name="SIA21[]" placeholder="Otro">
 
 			</div>
+	
+
+</div>
+
+</div>
+
+<br>
 
 
 
@@ -3773,13 +3624,23 @@ Clinico
 
 </div>
 
+<?php
+
+  $crearClinicos= new ControladorClinicos();
+  $crearClinicos -> ctrCrearClinicos();
+
+?>
+
+</form>
+
+
 	
 		</div>
 	</div>
 </div>
 
 
-
+<form role="form" method="post">
 
 
 <!--======================
@@ -3806,13 +3667,70 @@ Antropometría Diametros
 
 	
 <br>
-	  
+
+
+<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+
+			  <select class="form-control input-lg" id="Cita" name="Cita" required>
+				
+				<option value="">Selecionar Cita</option>
+
+				<?php
+
+				$item = null;
+				$valor = null;
+
+				$categorias = ControladorCategorias::ctrMostrarCategorias($item, $valor);
+
+				foreach ($categorias as $key => $value) {
+				  
+				  echo '<option value="'.$value["categoria"].'">'.$value["categoria"].'</option>';
+				}
+
+				?>
+
+			  </select>
+
+			</div>
+
+<br>
+
+<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+
+			  <select class="form-control input-lg" id="Paciente" name="Paciente" required>
+				
+				<option value="">Selecionar Nombre del Paciente</option>
+
+				<?php
+
+				$item = null;
+				$valor = null;
+
+				$clientes = ControladorClientes::ctrMostrarClientes($item, $valor);
+
+				foreach ($clientes as $key => $value) {
+				  
+				  echo '<option value="'.$value["nombre"].'">'.$value["nombre"].'</option>';
+				}
+
+				?>
+
+			  </select>
+
+			</div>
+
+
+<br>
 
 	  <div class="input-group">
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Sistólica mm Hg" required>
+			  <input type="text" class="form-control input-lg" id="Si" name="Si" placeholder="Sistólica mm Hg" required>
 
 			</div>
 
@@ -3821,7 +3739,7 @@ Antropometría Diametros
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Diastólica mm Hg" required>
+			  <input type="text" class="form-control input-lg" id="Di" name="Di" placeholder="Diastólica mm Hg" required>
 
 			</div>
 
@@ -3829,7 +3747,7 @@ Antropometría Diametros
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Diagnóstica " required>
+			  <input type="text" class="form-control input-lg" id="Dia" name="Dia"  placeholder="Diagnóstica " required>
 
 			</div>
 
@@ -3848,7 +3766,7 @@ Antropometría Diametros
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Boca  36 - 38 °C" required>
+			  <input type="text" class="form-control input-lg" id="Bo" name="Bo" placeholder="Boca  36 - 38 °C" required>
 
 			</div>
 
@@ -3858,7 +3776,7 @@ Antropometría Diametros
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Axila °C " required>
+			  <input type="text" class="form-control input-lg" id="Ax" name="Ax" placeholder="Axila °C " required>
 
 			</div>
 
@@ -3866,7 +3784,7 @@ Antropometría Diametros
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Ingle 36 - 38 °C " required>
+			  <input type="text" class="form-control input-lg" id="In" name="In" placeholder="Ingle 36 - 38 °C " required>
 
 			</div>
 
@@ -3874,7 +3792,7 @@ Antropometría Diametros
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Recto  36 - 38 °C " required>
+			  <input type="text" class="form-control input-lg" id="Re" name="Re" placeholder="Recto  36 - 38 °C " required>
 
 			</div>
 			
@@ -3891,7 +3809,7 @@ Antropometría Diametros
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Cartideo 60-100 ppm" required>
+			  <input type="text" class="form-control input-lg" id="Ca" name="Ca" placeholder="Cartideo 60-100 ppm" required>
 
 			</div>
 
@@ -3899,7 +3817,7 @@ Antropometría Diametros
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Radial 60-100 ppm" required>
+			  <input type="text" class="form-control input-lg" id="Ra" name="Ra" placeholder="Radial 60-100 ppm" required>
 
 			</div>
 
@@ -3908,7 +3826,7 @@ Antropometría Diametros
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Axilar 60-100 ppm" required>
+			  <input type="text" class="form-control input-lg" id="Axi" name="Axi" placeholder="Axilar 60-100 ppm" required>
 
 			</div>
 
@@ -3918,7 +3836,7 @@ Antropometría Diametros
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Broquial 60-100 ppm" required>
+			  <input type="text" class="form-control input-lg" id="Bro" name="Bro" placeholder="Broquial 60-100 ppm" required>
 
 			</div>
 
@@ -3926,7 +3844,7 @@ Antropometría Diametros
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Femural 60-100 ppm" required>
+			  <input type="text" class="form-control input-lg" id="Femu" name="Femu" placeholder="Femural 60-100 ppm" required>
 
 			</div>
 
@@ -3934,12 +3852,10 @@ Antropometría Diametros
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Otro" required>
+			  <input type="text" class="form-control input-lg" id="O" name="O" placeholder="Otro" required>
 
 			</div>
 			<div class="modal-footer">
-
-
 
 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
 
@@ -3947,8 +3863,19 @@ Antropometría Diametros
 
 </div>
 
+<?php
+
+  $crearSigno = new ControladorSignoss();
+  $crearSigno -> ctrCrearSignoss();
+
+?>
+
+</form>
+
+
 	
 		</div>
 	</div>
 </div>
+
 

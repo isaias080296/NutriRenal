@@ -224,5 +224,14 @@ class ControladorClientes{
 
 	}
 
-}
 
+
+	/*--===============================
+	Crear Sintomas Gastrointestinales
+	===================================-*/
+
+
+
+	
+
+}

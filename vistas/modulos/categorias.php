@@ -161,11 +161,11 @@ MODAL AGREGAR CATEGORÍA
               
                 <span class="input-group-addon"><i class="fa fa-th"></i></span> 
 
-                <input type="text" class="form-control input-lg" name="nuevaCategoria" placeholder="Ingresar Nombre del Paciente" required>
-                <input type="date"  class="form-control input-lg" name="fechas" min="2019-03-25"max="2020-05-25" step="2" required>
-                <input type="time" class="form-control input-lg"  name="hora" min="7:00" max="21:00" step="3600" required>
+                <input type="text" class="form-control input-lg" name="Paciente" placeholder="Ingresar Nombre del Paciente" required>
+                <input type="date"  class="form-control input-lg" name="Fecha1" min="2019-01-01"max="2020-05-25" step="2" required>
+                <input type="time" class="form-control input-lg"  name="hora" min="00:00" max="23:00" step="3600" required>
                 <input type="text" class="form-control input-lg" name="nuevaCategoria" placeholder="Ingresar Motivo de la Cita" required>
-                <input type="text" class="form-control input-lg" name="nuevaCategoria" placeholder="Costo de la Cita" required>
+                <input type="text" class="form-control input-lg" name="Costo" placeholder="Costo de la Cita" required>
              
               </div>
 
