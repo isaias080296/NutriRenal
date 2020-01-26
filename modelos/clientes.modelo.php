@@ -21,7 +21,7 @@ class ModeloClientes{
 
 	
 		$stmt->bindParam(":documento", $datos["documento"], PDO::PARAM_INT);
-
+		$stmt->bindParam(":rfc", $datos["rfc"], PDO::PARAM_INT);
 		$stmt->bindParam(":email", $datos["email"], PDO::PARAM_STR);
 		$stmt->bindParam(":cliente", $datos["cliente"], PDO::PARAM_STR);
 		$stmt->bindParam(":telefono", $datos["telefono"], PDO::PARAM_STR);
@@ -87,7 +87,7 @@ class ModeloClientes{
 	=============================================*/
 static public function mdlEditarCliente($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nombre = :nombre, documento = :documento, email = :email, telefono = :telefono, direccion = :direccion, rfc= :rfc, paginaweb= :paginaweb, cliente= :cliente , nombreContacto= :nombreContacto,puestoCargo= :puestoCargo, emailcontacto= :emailcontacto, telefonofijocontacto=:telefonofijocontacto,telefonocelularcontacto=:telefonocelularcontacto, comentarios=:comentarios WHERE id = :id");
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nombre = :nombre, documento = :documento, email = :email, telefono = :telefono, direccion = :direccion, rfc= :rfc, cliente= :cliente , nombreContacto= :nombreContacto,puestoCargo= :puestoCargo, emailcontacto= :emailcontacto, telefonofijocontacto=:telefonofijocontacto,telefonocelularcontacto=:telefonocelularcontacto, comentarios=:comentarios WHERE id = :id");
 
 		$stmt->bindParam(":id", $datos["id"], PDO::PARAM_INT);
 		$stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
@@ -97,7 +97,6 @@ static public function mdlEditarCliente($tabla, $datos){
 		$stmt->bindParam(":direccion", $datos["direccion"], PDO::PARAM_STR);
 		$stmt->bindParam(":rfc", $datos["rfc"], PDO::PARAM_STR);
 		$stmt->bindParam(":cliente", $datos["cliente"], PDO::PARAM_STR);
-		$stmt->bindParam(":paginaweb", $datos["paginaweb"], PDO::PARAM_STR);
 		$stmt->bindParam(":nombreContacto", $datos["nombreContacto"], PDO::PARAM_STR);
 		$stmt->bindParam(":puestoCargo", $datos["puestoCargo"], PDO::PARAM_STR);
 		$stmt->bindParam(":emailcontacto", $datos["emailcontacto"], PDO::PARAM_STR);

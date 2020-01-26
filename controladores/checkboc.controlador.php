@@ -85,11 +85,11 @@ static public function ctrCrearClinicos(){
 MOSTRAR CATEGORIAS
 =============================================*/
 
-static public function ctrMostrarCategorias($item, $valor){
+static public function ctrMostrarClinicos($item, $valor){
 
-    $tabla = "categorias";
+    $tabla = "clinico";
 
-    $respuesta = ModeloCategorias::mdlMostrarCategorias($tabla, $item, $valor);
+    $respuesta = ModeloClinico::mdlMostrarClinicos($tabla, $item, $valor);
 
     return $respuesta;
 

@@ -26,7 +26,7 @@ class ControladorClientes{
 					           "cliente"=>$_POST["cliente"],
 					           "rfc"=>$_POST["rfc"],
 					           "telefono"=>$_POST["nuevoTelefono"],
-					           "paginaweb"=>$_POST["paginaweb"],
+					
 					           "direccion"=>$_POST["nuevaDireccion"],
 					           "nombreContacto"=>$_POST["nombreContacto"],
 					           "puestoCargo"=>$_POST["puestoCargo"],
@@ -44,7 +44,6 @@ class ControladorClientes{
 			   	if($respuesta == "ok"){
 
 					echo'<script>
-
 					swal({
 						  type: "success",
 						  title: "El cliente ha sido guardado correctamente",
@@ -52,12 +51,9 @@ class ControladorClientes{
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
 									if (result.value) {
-
 									window.location = "clientes";
-
 									}
 								})
-
 					</script>';
 
 				}
@@ -65,7 +61,6 @@ class ControladorClientes{
 			}else{
 
 				echo'<script>
-
 					swal({
 						  type: "error",
 						  title: "¡El cliente no puede ir vacío o llevar caracteres especiales!",
@@ -73,12 +68,9 @@ class ControladorClientes{
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
 							if (result.value) {
-
 							window.location = "clientes";
-
 							}
 						})
-
 			  	</script>';
 
 
@@ -141,7 +133,6 @@ class ControladorClientes{
 			   	if($respuesta == "ok"){
 
 					echo'<script>
-
 					swal({
 						  type: "success",
 						  title: "El cliente ha sido cambiado correctamente",
@@ -149,12 +140,9 @@ class ControladorClientes{
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
 									if (result.value) {
-
 									window.location = "clientes";
-
 									}
 								})
-
 					</script>';
 
 				}
@@ -162,7 +150,6 @@ class ControladorClientes{
 			}else{
 
 				echo'<script>
-
 					swal({
 						  type: "error",
 						  title: "¡El cliente no puede ir vacío o llevar caracteres especiales!",
@@ -170,12 +157,9 @@ class ControladorClientes{
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
 							if (result.value) {
-
 							window.location = "clientes";
-
 							}
 						})
-
 			  	</script>';
 
 
@@ -201,7 +185,6 @@ class ControladorClientes{
 			if($respuesta == "ok"){
 
 				echo'<script>
-
 				swal({
 					  type: "success",
 					  title: "El cliente ha sido borrado correctamente",
@@ -210,12 +193,9 @@ class ControladorClientes{
 					  closeOnConfirm: false
 					  }).then(function(result){
 								if (result.value) {
-
 								window.location = "clientes";
-
 								}
 							})
-
 				</script>';
 
 			}		
@@ -223,15 +203,5 @@ class ControladorClientes{
 		}
 
 	}
-
-
-
-	/*--===============================
-	Crear Sintomas Gastrointestinales
-	===================================-*/
-
-
-
-	
 
 }

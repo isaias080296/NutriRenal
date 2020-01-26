@@ -10,10 +10,11 @@ CREAR CLIENTE
 
 static public function mdlIngresarBioquimicos($tabla, $datos){
 
-    $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(B1, B2, B3, B4, B5, B6, B7, B8, B9, B10, B11, B12, B13, B14, B15, B16, B17, B18, B19, B20, B21, B22, B23, B24, B25, B26, B27, B28, B29, B30, B31, B32, B33, B34, B35, B36, B37, B38, B39, B40, B41, B42, B43, B44, B45, B46, B47, B48 ) VALUES (:B1, :B2, :B3, :B4, :B5, :B6, :B7, :B8, :B9, :B10, :B11, :B12, :B14, :B15, :B16, :B17, :B18, :B19, :B20, :B21, :B22, :B23, :B24, :B25, :B26, :B27, :B28, :B29, :B30, :B31, :B32, :B33, :B34, :B35, :B36, :B37, :B38, :B39, :B40, :B41, :B42, :B43, :B44, :B45, :B46, :B47, :B48 )");
+    $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(B1, B2, B3, B4, B5, B6, B7, B8, B9, B10, B11, B12, B13, B14, B15, B16, B17, B18, B19, B20, B21, B22, B23, B24, B36, B37, B38, B39, B40, B41, B42, B43, B44, B45, B47, B48, Paciente, Cita ) VALUES (:B1, :B2, :B3, :B4, :B5, :B6, :B7, :B8, :B9, :B10, :B11, :B12, :B14, :B15, :B16, :B17, :B18, :B19, :B20, :B21, :B22, :B23, :B24, :B26,:B36, :B37, :B38, :B39, :B40, :B41, :B42, :B43, :B44, :B45, :B47, :B48, :Paciente, :Cita)");
 
 
-
+    $stmt->bindParam(":Paciente", $datos["Paciente"], PDO::PARAM_STR);
+    $stmt->bindParam(":Cita", $datos["Cita"], PDO::PARAM_STR);
 
     $stmt->bindParam(":B1", $datos["B1"], PDO::PARAM_STR);
     $stmt->bindParam(":B2", $datos["B2"], PDO::PARAM_STR);
@@ -39,17 +40,6 @@ static public function mdlIngresarBioquimicos($tabla, $datos){
     $stmt->bindParam(":B22", $datos["B22"], PDO::PARAM_STR);
     $stmt->bindParam(":B23", $datos["B23"], PDO::PARAM_STR);
     $stmt->bindParam(":B24", $datos["B24"], PDO::PARAM_STR);
-    $stmt->bindParam(":B25", $datos["B25"], PDO::PARAM_STR);
-    $stmt->bindParam(":B26", $datos["B26"], PDO::PARAM_STR);
-    $stmt->bindParam(":B27", $datos["B27"], PDO::PARAM_STR);
-    $stmt->bindParam(":B28", $datos["B28"], PDO::PARAM_STR);
-    $stmt->bindParam(":B29", $datos["B29"], PDO::PARAM_STR);
-    $stmt->bindParam(":B30", $datos["B30"], PDO::PARAM_STR);
-    $stmt->bindParam(":B31", $datos["B31"], PDO::PARAM_STR);
-    $stmt->bindParam(":B32", $datos["B32"], PDO::PARAM_STR); 
-    $stmt->bindParam(":B33", $datos["B33"], PDO::PARAM_STR);
-    $stmt->bindParam(":B34", $datos["B34"], PDO::PARAM_STR);
-    $stmt->bindParam(":B35", $datos["B35"], PDO::PARAM_STR);
     $stmt->bindParam(":B36", $datos["B36"], PDO::PARAM_STR);
     $stmt->bindParam(":B37", $datos["B37"], PDO::PARAM_STR);
     $stmt->bindParam(":B38", $datos["B38"], PDO::PARAM_STR);
@@ -60,7 +50,7 @@ static public function mdlIngresarBioquimicos($tabla, $datos){
     $stmt->bindParam(":B43", $datos["B43"], PDO::PARAM_STR);
     $stmt->bindParam(":B44", $datos["B44"], PDO::PARAM_STR); 
     $stmt->bindParam(":B45", $datos["B45"], PDO::PARAM_STR);
-    $stmt->bindParam(":B46", $datos["B46"], PDO::PARAM_STR);
+
     $stmt->bindParam(":B47", $datos["B47"], PDO::PARAM_STR);
     $stmt->bindParam(":B48", $datos["B48"], PDO::PARAM_STR);
 
@@ -95,7 +85,7 @@ static public function mdlIngresarBioquimicos($tabla, $datos){
 MOSTRAR CATEGORIAS
 =============================================*/
 
-static public function mdlMostrarCategorias($tabla, $item, $valor){
+static public function mdlMostrarBioquimicos($tabla, $item, $valor){
 
     if($item != null){
 

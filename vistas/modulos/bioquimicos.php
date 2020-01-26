@@ -18,7 +18,7 @@ if($_SESSION["perfil"] == "Especial"){
     
     <h1>
       
-      Administrar clientes
+     Bioquimicos Clientes
     
     </h1>
 
@@ -26,7 +26,7 @@ if($_SESSION["perfil"] == "Especial"){
       
       <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
       
-      <li class="active">Administrar clientes</li>
+      <li class="active">Administrar Bioquimicos</li>
     
     </ol>
 
@@ -36,15 +36,7 @@ if($_SESSION["perfil"] == "Especial"){
 
     <div class="box">
 
-      <div class="box-header with-border">
-  
-        <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarCliente">
-          
-          Agregar cliente
-
-        </button>
     
-      </div>
 
       <div class="box-body">
         
@@ -55,23 +47,43 @@ if($_SESSION["perfil"] == "Especial"){
          <tr>
            
            <th style="width:10px">#</th>
-           <th>Nombre</th>
-           <th>Cliente de</th>
-           <th>Documento ID</th>
-           <th>Email</th>
-           <th>Teléfono</th>
-           <th>Dirección</th> 
-           <th>Total de citas</th>
-           <th>Última cita</th>
-           <th>Ingreso al sistema</th>
-           <th>Diagnostico Médico</th>
-           <th>Nombre del Contacto</th>
-           <th>Puesto o Cargo</th>
-           <th>email del contacto</th>
-           <th>Telefono fijo</th>
-           <th>Telefono celular</th>
-           <th>Comentarios</th>
-           <th>Acciones</th>
+           <th>Paciente</th>
+           <th>Cita</th>
+           <th>Sodio</th>
+           <th>Calcio</th>
+           <th>Potasio</th>
+           <th>Fósforo</th>
+           <th>Eritrocitos</th>
+           <th>Concentración de Hemoglobina</th>
+           <th>Hematocrito mg/dl 37-47</th>
+           <th>Volumen Corpuscular Medio fl 90-99</th> 
+           <th>Hemoglobina Corpuscular Medio fl 90-99</th>
+           <th>Leucocitos k/NL</th>
+           <th>Linfositos</th>
+           <th>Eosinfolios</th>
+           <th>Basófilos</th>
+           <th>Neutrofilos segmentados</th>
+           <th>Plaquetas</th>
+           <th>Colesterol Total</th>
+           <th>Colesterol HDL</th>
+           <th>Colesterol LDL</th>
+           <th>Colesterol VLDL</th>
+           <th>Trigliceridos</th>
+           <th>Lipidos total</th>
+           <th>PH</th>
+           <th>Proteinas</th>
+           <th>Glucosa</th>
+           <th>Bilirrubia</th>
+           <th>Nitritos</th>
+           <th>Cuerpos Cetonicos</th>
+           <th>Hemoglobina</th>
+           <th>Glucosa en ayuno</th>
+           <th>Glucosa 1 hora despues de la ingesta</th>
+           <th>Hemoglobina Glucosilada</th>
+           <th>Creatina</th>
+           <th>Ulea</th>
+           <th>BUN</th>
+           <th>Albumina</th>
          </tr> 
 
         </thead>
@@ -83,29 +95,51 @@ if($_SESSION["perfil"] == "Especial"){
           $item = null;
           $valor = null;
 
-          $clientes = ControladorClientes::ctrMostrarClientes($item, $valor);
+          $clientes = ControladorBioquimicos::ctrMostrarBiquimicos($item, $valor);
 
           foreach ($clientes as $key => $value) {
             
 
             echo '<tr>
                      <td>'.($key+1).'</td>
-                    <td>'.$value["nombre"].'</td>
-                    <td>'.$value["cliente"].'</td>
-                    <td>'.$value["documento"].'</td>
-                    <td>'.$value["puestoCargo"].'</td>
-                    <td>'.$value["email"].'</td>
-                    <td>'.$value["telefono"].'</td>
-                    <td>'.$value["direccion"].'</td>
-                    <td>'.$value["compras"].'</td>
-                    <td>'.$value["ultima_compra"].'</td>
-                    <td>'.$value["fecha"].'</td>
-                    <td>'.$value["paginaweb"].'</td>
-                    <td>'.$value["nombreContacto"].'</td>
-                    <td>'.$value["emailcontacto"].'</td>
-                    <td>'.$value["telefonofijocontacto"].'</td>
-                    <td>'.$value["telefonocelularcontacto"].'</td>
-                    <td>'.$value["comentarios"].'</td>
+                    <td>'.$value["Paciente"].'</td>
+                    <td>'.$value["Cita"].'</td>
+                    <td>'.$value["B9"].'</td>
+                    <td>'.$value["B10"].'</td>
+                    <td>'.$value["B11"].'</td>
+                    <td>'.$value["B12"].'</td>
+                    <td>'.$value["B13"].'</td>
+                    <td>'.$value["B14"].'</td>
+                    <td>'.$value["B15"].'</td>
+                    <td>'.$value["B16"].'</td>
+                    <td>'.$value["B17"].'</td>
+                    <td>'.$value["B18"].'</td>
+                    <td>'.$value["B19"].'</td>
+                    <td>'.$value["B20"].'</td>
+                    <td>'.$value["B21"].'</td>
+                    <td>'.$value["B22"].'</td>
+                    <td>'.$value["B23"].'</td>
+                    <td>'.$value["B24"].'</td>
+                    <td>'.$value["B36"].'</td>
+                    <td>'.$value["B37"].'</td>
+                    <td>'.$value["B38"].'</td>
+                    <td>'.$value["B39"].'</td>
+                    <td>'.$value["B40"].'</td>
+                    <td>'.$value["B41"].'</td>
+                    <td>'.$value["B42"].'</td>
+                    <td>'.$value["B43"].'</td>
+                    <td>'.$value["B44"].'</td>
+                    <td>'.$value["B45"].'</td>
+                    <td>'.$value["B47"].'</td>
+                    <td>'.$value["B48"].'</td>
+                    <td>'.$value["B1"].'</td>
+                    <td>'.$value["B2"].'</td>
+                    <td>'.$value["B3"].'</td>
+                    <td>'.$value["B4"].'</td>
+                    <td>'.$value["B5"].'</td>
+                    <td>'.$value["B6"].'</td>
+                    <td>'.$value["B7"].'</td>   
+                    <td>'.$value["B8"].'</td>     
                  
                     <td>
                       <div class="btn-group">
@@ -188,15 +222,21 @@ MODAL AGREGAR CLIENTE
             
             <div class="form-group">
               
-
-            <div class="input-group">
+              <div class="input-group">
               
-              <span class="input-group-addon"><i class="fa fa-user"></i></span> 
-
-              <input type="text" class="form-control input-lg" name="rfc" placeholder="Ingresar nombre del Pacientes" required>
+                <span class="input-group-addon"><i class="fa fa-th"></i></span>
+              
+                <select class="form-control input-lg" id="cliente" name="cliente" required>
+                  <option value="">Diagnostico Medico</option>
+               
+                  <option value="Intamex">1</option>
+                  <option value="Pancale">2</option>
+                  <option value="Pancale">3</option>
+                  <option value="MansionMex">4</option>
+                  <option value="TecnoCompraz">5</option>
+                </select>
 
             </div>
-            
 
             </div>
 

@@ -52,7 +52,7 @@ static public function mdlIngresarSigno($tabla, $datos){
 MOSTRAR CATEGORIAS
 =============================================*/
 
-static public function mdlMostrarCategorias($tabla, $item, $valor){
+static public function mdlMostrarSignoss($tabla, $item, $valor){
 
     if($item != null){
 

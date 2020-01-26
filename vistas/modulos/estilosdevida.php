@@ -3,7 +3,9 @@
 if($_SESSION["perfil"] == "Especial"){
 
   echo '<script>
+
     window.location = "inicio";
+
   </script>';
 
   return;
@@ -18,7 +20,7 @@ if($_SESSION["perfil"] == "Especial"){
     
     <h1>
       
-      Administrar clientes
+      Estilos de Vida de Pacientes
     
     </h1>
 
@@ -55,23 +57,73 @@ if($_SESSION["perfil"] == "Especial"){
          <tr>
            
            <th style="width:10px">#</th>
-           <th>Nombre</th>
-           <th>Cliente de</th>
-           <th>Documento ID</th>
-           <th>Email</th>
-           <th>Teléfono</th>
-           <th>Dirección</th> 
-           <th>Total de citas</th>
-           <th>Última cita</th>
-           <th>Ingreso al sistema</th>
-           <th>Diagnostico Médico</th>
-           <th>Nombre del Contacto</th>
-           <th>Puesto o Cargo</th>
-           <th>email del contacto</th>
-           <th>Telefono fijo</th>
-           <th>Telefono celular</th>
-           <th>Comentarios</th>
-           <th>Acciones</th>
+           <th>Cita</th>
+           <th>Paciente</th>
+           <th>Se Alimenta Solo</th>
+           <th>Fatiga</th>
+           <th>Capacidad para Trabajar</th>
+           <th>He dejado de Trabajar</th> 
+           <th>Actividades Fisicas</th>
+           <th>Conoce temas relacionados con Nutrición</th>
+           <th>Enfermedad Renal, Riesgos y Complicaciones</th>
+           <th>Cual</th>
+           <th>Modificaciones Dietéticas</th>
+           <th>Medir Porciones</th>
+           <th>Alimentos Altos en Fósforo</th>
+           <th>Alimentos Bajos en Fósforo</th>
+           <th>Alimentos Altos en Sodio</th>
+           <th>Aliments Altos en Potasio</th>
+           <th>Alimentos Bajos en Potasio</th>
+           <th>Alimentos Altos en Calcio</th>
+           <th>Alimentos Bajos en Calcio</th>
+           <th>Actividades Fisicas</th>
+           <th>Toleracia Via Oral</th>
+           <th>Anorexia</th>
+           <th>Vómito</th>
+           <th>Náuseas</th>
+           <th>Sensación de Plenitud y Saciedad Temprana</th>
+           <th>Cambios en el Apetito</th>
+           <th>Sed</th>
+           <th>Problemas en comer los Alimentos</th>
+           <th>Alteración en Gusto</th>
+           <th>Ingresar Actividades Fisicas</th>
+           <th>Sintomas de Uremia</th>
+           <th>Sintomas de Fosfatemia</th>
+           <th>Sintomas de Hipercalemia</th>
+           <th>Recomendaciones Dietéticas Previas</th>
+           <th>Desayuno</th>
+           <th>Comida</th>
+           <th>Colacion</th>
+           <th>Cena</th>
+           <th>Alimentación antes de terapia sustitutiva</th>
+           <th>Ejemplo</th>
+           <th>Alimentación Despues de la Terapia Sustitutiva</th>
+           <th>Ejemplo</th>
+           <th>¿Con quien come?</th>
+           <th>¿Quien prepara los alimentos?</th>
+           <th>Apego o Aversión a Ciertos Alimentos</th>
+           <th>Cuales</th>
+           <th>Consumo de Cafeina</th>
+           <th>Tazas</th>
+           <th>Consumo de Alcohol</th>
+           <th>Frecuencia</th>
+           <th>Consumo de Sal</th>
+           <th>Consumo de Refresco</th>
+           <th>Vasos</th>
+           <th>Frecuencia</th>
+           <th>Problemas en comer Alimentos</th>
+           <th>Alteración en gusto</th>
+           <th>Tipo de Actividad Fisica</th>
+           <th>Duración en Horas</th>
+           <th>Duración en Minutos</th>
+           <th>Camina Distancias Cortas</th>
+           <th>Tipo de Ejercicio</th>
+           <th>Cuales</th>
+           <th>Realiza Actividad de Tipo Laboral</th>
+           <th>Ingresar Actividades Fisicas</th>
+           <th>Realizar Actividades Fisicas Recreativas</th>
+           <th>Cual</th>
+           <th>Ingresar Actividades Fisicas</th>
          </tr> 
 
         </thead>
@@ -83,43 +135,107 @@ if($_SESSION["perfil"] == "Especial"){
           $item = null;
           $valor = null;
 
-          $clientes = ControladorClientes::ctrMostrarClientes($item, $valor);
+          $clientes = ControladorCapacidadF::ctrMostrarCapacidadf($item, $valor);
 
           foreach ($clientes as $key => $value) {
             
 
             echo '<tr>
+
                      <td>'.($key+1).'</td>
-                    <td>'.$value["nombre"].'</td>
-                    <td>'.$value["cliente"].'</td>
-                    <td>'.$value["documento"].'</td>
-                    <td>'.$value["puestoCargo"].'</td>
-                    <td>'.$value["email"].'</td>
-                    <td>'.$value["telefono"].'</td>
-                    <td>'.$value["direccion"].'</td>
-                    <td>'.$value["compras"].'</td>
-                    <td>'.$value["ultima_compra"].'</td>
-                    <td>'.$value["fecha"].'</td>
-                    <td>'.$value["paginaweb"].'</td>
-                    <td>'.$value["nombreContacto"].'</td>
-                    <td>'.$value["emailcontacto"].'</td>
-                    <td>'.$value["telefonofijocontacto"].'</td>
-                    <td>'.$value["telefonocelularcontacto"].'</td>
-                    <td>'.$value["comentarios"].'</td>
+
+                    <td>'.$value["Paciente"].'</td>
+
+                    <td>'.$value["Cita"].'</td>
+
+                    <td>'.$value["CF1"].'</td>
+
+                    <td>'.$value["CF2"].'</td>
+
+                    <td>'.$value["CF3"].'</td>
+
+                    <td>'.$value["CF4"].'</td>
+
+                    <td>'.$value["CF5"].'</td>
+                    <td>'.$value["HC1"].'</td>
+                    <td>'.$value["HC2"].'</td>
+                    <td>'.$value["HC3"].'</td>
+                    <td>'.$value["HC4"].'</td>
+                    <td>'.$value["HC5"].'</td>
+                    <td>'.$value["HC6"].'</td>
+                    <td>'.$value["HC7"].'</td>
+                    <td>'.$value["HC8"].'</td>
+                    <td>'.$value["HC9"].'</td>
+                    <td>'.$value["HC10"].'</td>
+                    <td>'.$value["HC11"].'</td>
+                    <td>'.$value["HC12"].'</td>
+                    <td>'.$value["HC13"].'</td>
+                    <td>'.$value["SG1"].'</td>
+                    <td>'.$value["SG2"].'</td>
+                    <td>'.$value["SG3"].'</td>
+                    <td>'.$value["SG4"].'</td>
+                    <td>'.$value["SG5"].'</td>
+                    <td>'.$value["SG6"].'</td>
+                    <td>'.$value["SG68"].'</td>
+                    <td>'.$value["SG68"].'</td>
+                    <td>'.$value["SG9"].'</td>
+                    <td>'.$value["SH1"].'</td>
+                    <td>'.$value["SF1"].'</td>
+                    <td>'.$value["SU1"].'</td>
+                    <td>'.$value["HA1"].'</td>
+                    <td>'.$value["HA2"].'</td>
+                    <td>'.$value["HA3"].'</td>
+                    <td>'.$value["HA4"].'</td>
+                    <td>'.$value["HA5"].'</td>
+                    <td>'.$value["HA6"].'</td>
+                    <td>'.$value["HA7"].'</td>
+                    <td>'.$value["HA8"].'</td>
+                    <td>'.$value["HA9"].'</td>
+                    <td>'.$value["HA10"].'</td>
+                    <td>'.$value["HA11"].'</td>
+                    <td>'.$value["HA12"].'</td>
+                    <td>'.$value["HA13"].'</td>
+                    <td>'.$value["HA14"].'</td>
+                    <td>'.$value["HA15"].'</td>
+                    <td>'.$value["HA16"].'</td>
+                    <td>'.$value["HA17"].'</td>
+                    <td>'.$value["HA18"].'</td>
+                    <td>'.$value["HA19"].'</td>
+                    <td>'.$value["HA20"].'</td>
+                    <td>'.$value["HA21"].'</td>
+                    <td>'.$value["HA22"].'</td>
+                    <td>'.$value["HA23"].'</td>
+                    <td>'.$value["AF1"].'</td>
+                    <td>'.$value["AF2"].'</td>
+                    <td>'.$value["AF3"].'</td>
+                    <td>'.$value["AF4"].'</td>
+                    <td>'.$value["AF5"].'</td>
+                    <td>'.$value["AF6"].'</td>
+                    <td>'.$value["AF7"].'</td>
+                    <td>'.$value["AF8"].'</td>
+                    <td>'.$value["AF9"].'</td>
+                    <td>'.$value["AF10"].'</td>
+                    <td>'.$value["AF11"].'</td>
+
+                
                  
+
                     <td>
+
                       <div class="btn-group">
                           
-                        <button class="btn btn-warning btnEditarCliente" data-toggle="modal" data-target="#modalEditarCliente" idCliente="'.$value["id"].'"><i class="fa fa-pencil"></i></button>';
+                        <></i></button>';
 
                       if($_SESSION["perfil"] == "Administrador"){
 
-                          echo '<button class="btn btn-danger btnEliminarCliente" idCliente="'.$value["id"].'"><i class="fa fa-times"></i></button>';
+                          echo '<button class="btn btn-danger btnEliminarCliente" id="'.$value["id"].'"><i class="fa fa-times"></i></button>';
 
                       }
 
                       echo '</div>  
+
                     </td>
+
                   </tr>';
           
             }
@@ -188,15 +304,21 @@ MODAL AGREGAR CLIENTE
             
             <div class="form-group">
               
-
-            <div class="input-group">
+              <div class="input-group">
               
-              <span class="input-group-addon"><i class="fa fa-user"></i></span> 
-
-              <input type="text" class="form-control input-lg" name="rfc" placeholder="Ingresar nombre del Pacientes" required>
+                <span class="input-group-addon"><i class="fa fa-th"></i></span>
+              
+                <select class="form-control input-lg" id="cliente" name="cliente" required>
+                  <option value="">Diagnostico Medico</option>
+               
+                  <option value="Intamex">1</option>
+                  <option value="Pancale">2</option>
+                  <option value="Pancale">3</option>
+                  <option value="MansionMex">4</option>
+                  <option value="TecnoCompraz">5</option>
+                </select>
 
             </div>
-            
 
             </div>
 
@@ -922,7 +1044,9 @@ a
 
 <?php
 
-  $eliminarCliente = new ControladorClientes();
-  $eliminarCliente -> ctrEliminarCliente();
+  $eliminarCapacidadF = new ControladorCapacidadF();
+  $eliminarCapacidadF -> ctrEliminarCapacidadF();
 
 ?>
+
+

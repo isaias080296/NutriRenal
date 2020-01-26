@@ -10,7 +10,7 @@ CREAR CLIENTE
 
 static public function mdlIngresarAntropometria($tabla, $datos){
 
-    $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(AB1, AB2, AB3, AB4, AB5, AB6 ,AB7 ,AB8, AB11, AB22, AB33, AB44, AB55, AB66, AB77, AP1, AP2, AP3, AP4, AP5, AP6, AP7, AP8, AP9, AP10, AP11, AP12, AP13, AP14, AD1, AD2, AD3, AD4, AD5, AD6, AD8, AD9, AD10, AD11 ) VALUES (:AB1, :AB2, :AB3, :AB4, :AB5, :AB6, :AB7, :AB8, :AB11, :AB22, :AB33,:AB44, :AB55, :AB66, :AB77, :AP1, :AP2, :AP3, :AP4, :AP5, :AP6, :AP7, :AP8, :AP9, :AP10, :AP11, :AP12, :AP13, :AP14, :AD1, :AD2, :AD3, :AD3, :AD5, :AD6, :AD7, :AD8, :AD9, :AD10, :AD11 )");
+    $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(AB1, AB2, AB3, AB4, AB5, AB6 ,AB7 ,AB8, AB11, AB22, AB33, AB44, AB55, AB66, AB77, AP1, AP2, AP3, AP4, AP5, AP6, AP7, AP8, AP9, AP10, AP11, AP12, AP13, AP14, AD1, AD2, AD3, AD4, AD5, AD6, AD8, AD9, AD10, AD11, Paciente, Cita ) VALUES (:AB1, :AB2, :AB3, :AB4, :AB5, :AB6, :AB7, :AB8, :AB11, :AB22, :AB33,:AB44, :AB55, :AB66, :AB77, :AP1, :AP2, :AP3, :AP4, :AP5, :AP6, :AP7, :AP8, :AP9, :AP10, :AP11, :AP12, :AP13, :AP14, :AD1, :AD2, :AD3, :AD3, :AD5, :AD6, :AD7, :AD8, :AD9, :AD10, :AD11, Paciente, Cita )");
 
 
 
@@ -23,6 +23,9 @@ static public function mdlIngresarAntropometria($tabla, $datos){
     $stmt->bindParam(":AB6", $datos["AB6"], PDO::PARAM_STR);
     $stmt->bindParam(":AB7", $datos["AB7"], PDO::PARAM_STR);
     $stmt->bindParam(":AB8", $datos["AB8"], PDO::PARAM_STR);
+
+    $stmt->bindParam(":Paciente", $datos["Paciente"], PDO::PARAM_STR);
+    $stmt->bindParam(":Cita", $datos["Cita"], PDO::PARAM_STR);
 
     $stmt->bindParam(":AB11", $datos["AB11"], PDO::PARAM_STR);
     $stmt->bindParam(":AB22", $datos["AB22"], PDO::PARAM_STR);
@@ -91,7 +94,7 @@ static public function mdlIngresarAntropometria($tabla, $datos){
 MOSTRAR CATEGORIAS
 =============================================*/
 
-static public function mdlMostrarCategorias($tabla, $item, $valor){
+static public function mdlMostrarAntropometria($tabla, $item, $valor){
 
     if($item != null){
 

@@ -15,6 +15,8 @@ static public function ctrCrearBioquimicos(){
                $tabla = "bioquimicos";
 
                $datos = array(
+                "Paciente"=>$_POST["Paciente"],
+                "Cita"=>$_POST["Cita"],
                 "B1"=>$_POST["B1"],
                 "B2"=>$_POST["B2"],
                 "B3"=>$_POST["B3"],
@@ -38,17 +40,6 @@ static public function ctrCrearBioquimicos(){
                 "B22"=>$_POST["B22"],
                 "B23"=>$_POST["B23"],
                 "B24"=>$_POST["B24"],
-                "B25"=>$_POST["B25"],
-                "B26"=>$_POST["B26"],
-                "B27"=>$_POST["B27"],
-                "B28"=>$_POST["B28"],
-                "B29"=>$_POST["B29"],
-                "B30"=>$_POST["B30"],
-                "B31"=>$_POST["B31"],
-                "B32"=>$_POST["B32"],
-                "B33"=>$_POST["B33"],
-                "B34"=>$_POST["B34"],
-                "B35"=>$_POST["B35"],
                 "B36"=>$_POST["B36"],
                 "B37"=>$_POST["B37"],
                 "B38"=>$_POST["B38"],
@@ -59,7 +50,7 @@ static public function ctrCrearBioquimicos(){
                 "B43"=>$_POST["B43"],
                 "B44"=>$_POST["B44"],
                 "B45"=>$_POST["B45"],
-                "B46"=>$_POST["B46"],
+   
                 "B47"=>$_POST["B47"],
                 "B48"=>$_POST["B48"],
 
@@ -120,11 +111,11 @@ static public function ctrCrearBioquimicos(){
 MOSTRAR CATEGORIAS
 =============================================*/
 
-static public function ctrMostrarCategorias($item, $valor){
+static public function ctrMostrarBiquimicos($item, $valor){
 
-    $tabla = "categorias";
+    $tabla = "bioquimicos";
 
-    $respuesta = ModeloCategorias::mdlMostrarCategorias($tabla, $item, $valor);
+    $respuesta = ModeloBioquimicos::mdlMostrarBioquimicos($tabla, $item, $valor);
 
     return $respuesta;
 

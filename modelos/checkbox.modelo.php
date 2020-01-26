@@ -48,7 +48,7 @@ static public function mdlIngresarClinico($tabla, $datos){
 MOSTRAR CATEGORIAS
 =============================================*/
 
-static public function mdlMostrarCategorias($tabla, $item, $valor){
+static public function mdlMostrarClinicos($tabla, $item, $valor){
 
     if($item != null){
 

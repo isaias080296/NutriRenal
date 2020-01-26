@@ -18,7 +18,7 @@ if($_SESSION["perfil"] == "Especial"){
     
     <h1>
       
-      Administrar clientes
+      Signos Pacientes
     
     </h1>
 
@@ -26,7 +26,7 @@ if($_SESSION["perfil"] == "Especial"){
       
       <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
       
-      <li class="active">Administrar clientes</li>
+      <li class="active">Signos Pacientess</li>
     
     </ol>
 
@@ -36,16 +36,7 @@ if($_SESSION["perfil"] == "Especial"){
 
     <div class="box">
 
-      <div class="box-header with-border">
-  
-        <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarCliente">
-          
-          Agregar cliente
-
-        </button>
     
-      </div>
-
       <div class="box-body">
         
        <table class="table table-bordered table-striped dt-responsive tablas" width="100%">
@@ -55,23 +46,22 @@ if($_SESSION["perfil"] == "Especial"){
          <tr>
            
            <th style="width:10px">#</th>
-           <th>Nombre</th>
-           <th>Cliente de</th>
-           <th>Documento ID</th>
-           <th>Email</th>
-           <th>Teléfono</th>
-           <th>Dirección</th> 
-           <th>Total de citas</th>
-           <th>Última cita</th>
-           <th>Ingreso al sistema</th>
-           <th>Diagnostico Médico</th>
-           <th>Nombre del Contacto</th>
-           <th>Puesto o Cargo</th>
-           <th>email del contacto</th>
-           <th>Telefono fijo</th>
-           <th>Telefono celular</th>
-           <th>Comentarios</th>
-           <th>Acciones</th>
+           <th>Paciente</th>
+           <th>Cita</th>
+           <th>Sitolica</th>
+           <th>Diastólica</th>
+           <th>Diagnóstica</th>
+           <th>Boca</th>
+           <th>Axila</th>
+           <th>Ingle</th>
+           <th>Recto</th>
+           <th>Cartideo</th>
+           <th>Radial</th>
+           <th>Axilar</th>
+           <th>Broquial</th>
+           <th>Femural</th>
+           <th>Otro</th>
+        
          </tr> 
 
         </thead>
@@ -83,42 +73,32 @@ if($_SESSION["perfil"] == "Especial"){
           $item = null;
           $valor = null;
 
-          $clientes = ControladorClientes::ctrMostrarClientes($item, $valor);
+          $clientes = ControladorSignoss::ctrMostrarSignoss($item, $valor);
 
           foreach ($clientes as $key => $value) {
             
 
             echo '<tr>
                      <td>'.($key+1).'</td>
-                    <td>'.$value["nombre"].'</td>
-                    <td>'.$value["cliente"].'</td>
-                    <td>'.$value["documento"].'</td>
-                    <td>'.$value["puestoCargo"].'</td>
-                    <td>'.$value["email"].'</td>
-                    <td>'.$value["telefono"].'</td>
-                    <td>'.$value["direccion"].'</td>
-                    <td>'.$value["compras"].'</td>
-                    <td>'.$value["ultima_compra"].'</td>
-                    <td>'.$value["fecha"].'</td>
-                    <td>'.$value["paginaweb"].'</td>
-                    <td>'.$value["nombreContacto"].'</td>
-                    <td>'.$value["emailcontacto"].'</td>
-                    <td>'.$value["telefonofijocontacto"].'</td>
-                    <td>'.$value["telefonocelularcontacto"].'</td>
-                    <td>'.$value["comentarios"].'</td>
+                     <td>'.$value["Paciente"].'</td>
+                     <td>'.$value["Cita"].'</td>
+                    <td>'.$value["Si"].'</td>
+                    <td>'.$value["Di"].'</td>
+                    <td>'.$value["Dia"].'</td>
+                    <td>'.$value["Bo"].'</td>
+                    <td>'.$value["Ax"].'</td>
+                    <td>'.$value["InL"].'</td>
+                    <td>'.$value["Re"].'</td>
+                    <td>'.$value["Ca"].'</td>
+                    <td>'.$value["Ra"].'</td>
+                    <td>'.$value["Axi"].'</td>
+                    <td>'.$value["Bro"].'</td>
+                    <td>'.$value["Femu"].'</td>
+                    <td>'.$value["O"].'</td>
+          
                  
                     <td>
-                      <div class="btn-group">
-                          
-                        <button class="btn btn-warning btnEditarCliente" data-toggle="modal" data-target="#modalEditarCliente" idCliente="'.$value["id"].'"><i class="fa fa-pencil"></i></button>';
-
-                      if($_SESSION["perfil"] == "Administrador"){
-
-                          echo '<button class="btn btn-danger btnEliminarCliente" idCliente="'.$value["id"].'"><i class="fa fa-times"></i></button>';
-
-                      }
-
-                      echo '</div>  
+                     
                     </td>
                   </tr>';
           
@@ -188,15 +168,21 @@ MODAL AGREGAR CLIENTE
             
             <div class="form-group">
               
-
-            <div class="input-group">
+              <div class="input-group">
               
-              <span class="input-group-addon"><i class="fa fa-user"></i></span> 
-
-              <input type="text" class="form-control input-lg" name="rfc" placeholder="Ingresar nombre del Pacientes" required>
+                <span class="input-group-addon"><i class="fa fa-th"></i></span>
+              
+                <select class="form-control input-lg" id="cliente" name="cliente" required>
+                  <option value="">Diagnostico Medico</option>
+               
+                  <option value="Intamex">1</option>
+                  <option value="Pancale">2</option>
+                  <option value="Pancale">3</option>
+                  <option value="MansionMex">4</option>
+                  <option value="TecnoCompraz">5</option>
+                </select>
 
             </div>
-            
 
             </div>
 

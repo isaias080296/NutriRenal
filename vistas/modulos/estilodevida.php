@@ -20,7 +20,7 @@ if($_SESSION["perfil"] == "Especial"){
     
     <h1>
       
-      Administrar Datos de los Clientes
+      Administrar clientes
     
     </h1>
 
@@ -28,7 +28,7 @@ if($_SESSION["perfil"] == "Especial"){
       
       <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
       
-      <li class="active">Administrar Datos de los Clientes</li>
+      <li class="active">Administrar clientes</li>
     
     </ol>
 
@@ -42,10 +42,10 @@ if($_SESSION["perfil"] == "Especial"){
   
         <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarCliente">
           
-          Agregar Datos del Paciente
+          Agregar cliente
 
         </button>
-
+    
       </div>
 
       <div class="box-body">
@@ -57,23 +57,13 @@ if($_SESSION["perfil"] == "Especial"){
          <tr>
            
            <th style="width:10px">#</th>
-           <th>Nombre</th>
-           <th>Cliente de</th>
-           <th>Documento ID</th>
-           <th>Email</th>
-           <th>Teléfono</th>
-           <th>Dirección</th> 
-           <th>Total de citas</th>
-           <th>Última cita</th>
-           <th>Ingreso al sistema</th>
-           <th>Pagina web</th>
-           <th>Nombre del Contacto</th>
-           <th>Puesto o Cargo</th>
-           <th>email del contacto</th>
-           <th>Telefono fijo</th>
-           <th>Telefono celular</th>
-           <th>Comentarios</th>
-           <th>Acciones</th>
+           <th>Cita</th>
+           <th>Paciente</th>
+           <th>Se Alimenta Solo</th>
+           <th>Fatiga</th>
+           <th>Capacidad para Trabajar</th>
+           <th>He dejado de Trabajar</th> 
+           <th>Actividades Fisicas</th>
          </tr> 
 
         </thead>
@@ -85,7 +75,7 @@ if($_SESSION["perfil"] == "Especial"){
           $item = null;
           $valor = null;
 
-          $clientes = ControladorClientes::ctrMostrarClientes($item, $valor);
+          $clientes = ControladorCapacidadF::ctrMostrarCapacidadf($item, $valor);
 
           foreach ($clientes as $key => $value) {
             
@@ -94,31 +84,21 @@ if($_SESSION["perfil"] == "Especial"){
 
                      <td>'.($key+1).'</td>
 
-                    <td>'.$value["nombre"].'</td>
+                    <td>'.$value["Paciente"].'</td>
 
-                    <td>'.$value["cliente"].'</td>
+                    <td>'.$value["Cita"].'</td>
 
-                    <td>'.$value["documento"].'</td>
+                    <td>'.$value["CF1"].'</td>
 
-                    <td>'.$value["puestoCargo"].'</td>
+                    <td>'.$value["CF2"].'</td>
 
-                    <td>'.$value["email"].'</td>
+                    <td>'.$value["CF3"].'</td>
 
-                    <td>'.$value["telefono"].'</td>
+                    <td>'.$value["CF4"].'</td>
 
-                    <td>'.$value["direccion"].'</td>
+                    <td>'.$value["CF5"].'</td>
 
-                    <td>'.$value["compras"].'</td>
-
-                    <td>'.$value["ultima_compra"].'</td>
-                    <td>'.$value["fecha"].'</td>
-
-                    <td>'.$value["paginaweb"].'</td>
-                    <td>'.$value["nombreContacto"].'</td>
-                    <td>'.$value["emailcontacto"].'</td>
-                    <td>'.$value["telefonofijocontacto"].'</td>
-                    <td>'.$value["telefonocelularcontacto"].'</td>
-                    <td>'.$value["comentarios"].'</td>
+                
                  
 
                     <td>
@@ -175,7 +155,7 @@ MODAL AGREGAR CLIENTE
 
           <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-          <h4 class="modal-title">Agregar Datos del cliente</h4>
+          <h4 class="modal-title">Agregar cliente</h4>
 
         </div>
 
@@ -196,21 +176,11 @@ MODAL AGREGAR CLIENTE
                 <span class="input-group-addon"><i class="fa fa-user"></i></span> 
 
                 <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Ingresar nombre del Pacientes" required>
-               
+
               </div>
-          
 
-
-            <!-- Check box-->
-
-            
-            <div class="form-group">
-              
-              <div class="input-group">
-              
-           
             </div>
-            </div>
+
              <!-- Cliente de -->
             
             <div class="form-group">
@@ -233,7 +203,6 @@ MODAL AGREGAR CLIENTE
 
             </div>
 
-          
             <!-- ENTRADA PARA EL DOCUMENTO ID -->
             
             <div class="form-group">
@@ -293,28 +262,11 @@ MODAL AGREGAR CLIENTE
               </div>
 
             </div>
-            <div>
 
-            <div class="modal-header" style="background:#3c8dbc; color:white">
+           <!--Botones despegables-->
 
-<button type="button" class="close" data-dismiss="modal">&times;</button>
-
-<h4 class="modal-title">Informacion del Acompañante</h4>
-
-</div> </div> <br>
-
-            &nbsp &nbsp &nbsp &nbsp
-
-            <button type="submit" class="btn btn-primary">Estilo de vida</button>  &nbsp &nbsp &nbsp &nbsp
-            <button type="submit" class="btn btn-primary">Clinico</button>   &nbsp &nbsp &nbsp &nbsp
-            <button type="submit" class="btn btn-primary">Biometrico</button> &nbsp &nbsp &nbsp &nbsp
-            <button type="submit" class="btn btn-primary">Situaciones Patológicos</button>
             <!--Pagina Web -->
 
-            </div>
-            </div>
-
-<!-- -->
            <!--=====================================
                Información del Contacto
             ======================================-->
@@ -403,7 +355,10 @@ MODAL AGREGAR CLIENTE
 
             </div>
   
-     
+          </div>
+
+        </div>
+
         <!--=====================================
         PIE DEL MODAL
         ======================================-->
@@ -429,6 +384,257 @@ MODAL AGREGAR CLIENTE
 
   </div>
 
+</div>
+
+<!--=====================================
+Datos de Estilo de Vida
+======================================== -->
+
+<div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+
+<div class="modal-content">
+
+  <form role="form" method="post">
+
+    <!--=====================================
+    CABEZA DEL MODAL
+    ======================================-->
+
+    <div class="modal-header" style="background:#3c8dbc; color:white">
+
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+      <h4 class="modal-title">Agregar cliente</h4>
+
+    </div>
+
+    <!--=====================================
+    CUERPO DEL MODAL
+    ======================================-->
+
+    <div class="modal-body">
+
+      <div class="box-body">
+
+        <!-- ENTRADA PARA EL NOMBRE -->
+        
+        <div class="form-group">
+          
+          <div class="input-group">
+          
+            <span class="input-group-addon"><i class="fa fa-user"></i></span> 
+
+            <input type="text" class="form-control input-lg" name="nuevoCliente" placeholder="Ingresar nombre del Pacientes" required>
+
+          </div>
+
+        </div>
+
+         <!-- Cliente de -->
+        
+        <div class="form-group">
+          
+          <div class="input-group">
+          
+            <span class="input-group-addon"><i class="fa fa-th"></i></span>
+          
+            <select class="form-control input-lg" id="cliente" name="cliente" required>
+              <option value="">Diagnostico Medico</option>
+           
+              <option value="Intamex">1</option>
+              <option value="Pancale">2</option>
+              <option value="Pancale">3</option>
+              <option value="MansionMex">4</option>
+              <option value="TecnoCompraz">5</option>
+            </select>
+
+        </div>
+
+        </div>
+
+        <!-- ENTRADA PARA EL DOCUMENTO ID -->
+        
+        <div class="form-group">
+          
+          <div class="input-group">
+          
+            <span class="input-group-addon"><i class="fa fa-key"></i></span> 
+
+            <input type="number" min="0" class="form-control input-lg" name="nuevoDocumentoId" placeholder="Ingresar documento" required>
+
+          </div>
+
+        </div>
+
+          <!-- RFC -->
+        
+ 
+
+        <!-- ENTRADA PARA EL EMAIL -->
+        
+        <div class="form-group">
+          
+          <div class="input-group">
+          
+            <span class="input-group-addon"><i class="fa fa-envelope"></i></span> 
+
+            <input type="email" class="form-control input-lg" name="nuevoEmail" placeholder="Ingresar email" required>
+
+          </div>
+
+        </div>
+
+        <!-- ENTRADA PARA EL TELÉFONO -->
+        
+        <div class="form-group">
+          
+          <div class="input-group">
+          
+            <span class="input-group-addon"><i class="fa fa-phone"></i></span> 
+
+            <input type="text" class="form-control input-lg" name="nuevoTelefono" placeholder="Ingresar teléfono" data-inputmask="'mask':'(999) 999-9999'" data-mask required>
+
+          </div>
+
+        </div>
+
+        <!-- ENTRADA PARA LA DIRECCIÓN -->
+        
+        <div class="form-group">
+          
+          <div class="input-group">
+          
+            <span class="input-group-addon"><i class="fa fa-map-marker"></i></span> 
+
+            <input type="text" class="form-control input-lg" name="nuevaDireccion" placeholder="Ingresar dirección" required>
+
+          </div>
+
+        </div>
+
+       <!--Botones despegables-->
+
+        <!--Pagina Web -->
+
+       <!--=====================================
+           Información del Contacto
+        ======================================-->
+
+          <div class="modal-header" style="background:#3c8dbc; color:white">
+
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+      <h4 class="modal-title">Informacion del Acompañante</h4>
+
+    </div>
+
+    <!--Nombre del Contacto-->
+        <div class="form-group">
+          
+          <div class="input-group">
+          
+            <span class="input-group-addon"><i class="fa fa-user-circle-o"></i></span> 
+
+            <input type="text" class="form-control input-lg" name="nombreContacto" placeholder="Nombre del Contacto" required>
+
+          </div>
+        </div>
+
+          <!--Puesto o Cargo-->
+        <div class="form-group">
+          
+          <div class="input-group">
+          
+            <span class="input-group-addon"><i class="fa fa-address-card"></i></span> 
+
+            <input type="text" class="form-control input-lg" name="puestoCargo" placeholder="Parentesco" required>
+
+          </div>
+
+        </div>
+
+          <!--email-->
+        <div class="form-group">
+          
+          <div class="input-group">
+          
+            <span class="input-group-addon"><i class="fa fa-envelope"></i></span> 
+
+            <input type="text" class="form-control input-lg" name="emailcontacto" placeholder="Email" required>
+
+          </div>
+
+        </div>
+         <!-- ENTRADA PARA EL TELÉFONO FIJO CONTACTO -->
+        
+        <div class="form-group">
+          
+          <div class="input-group">
+          
+            <span class="input-group-addon"><i class="fa fa-phone"></i></span> 
+
+            <input type="text" class="form-control input-lg" name="telefonofijocontacto" placeholder="Telefono fijo" data-inputmask="'mask':'(999) 999-9999'" data-mask required>
+
+          </div>
+
+        </div>
+        <!-- ENTRADA PARA EL TELÉFONO CELULAR CONTACTO -->
+        
+        <div class="form-group">
+          
+          <div class="input-group">
+          
+            <span class="input-group-addon"><i class="fa fa-phone"></i></span> 
+
+            <input type="text" class="form-control input-lg" name="telefonocelularcontacto" placeholder="Telefono Celular" data-inputmask="'mask':'(999) 999-9999'" data-mask required>
+
+          </div>
+
+        </div>
+          <!--Comentarios-->
+        <div class="form-group">
+          
+          <div class="input-group">
+          
+            <span class="input-group-addon"><i class="fa fa-commenting-o"></i></span> 
+
+            <input type="text" class="form-control input-lg" name="comentarios" placeholder="Comentarios" required>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!--=====================================
+    PIE DEL MODAL
+    ======================================-->
+
+    <div class="modal-footer">
+
+      <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+
+      <button type="submit" class="btn btn-primary">Guardar cliente</button>
+
+    </div>
+
+  </form>
+
+  <?php
+
+    $crearCliente = new ControladorClientes();
+    $crearCliente -> ctrCrearCliente();
+
+  ?>
+
+</div>
+
+</div>
+
+</div>
 </div>
 
 <!--=====================================

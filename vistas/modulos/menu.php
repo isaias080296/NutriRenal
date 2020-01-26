@@ -1,11 +1,7 @@
  
 
 <aside class="main-sidebar">
-<!--=====================================
-GoMercadito Abigail Villanueva Tlazalo 
-            Isaías Galdino Gomez Duarte
-            2018  #P006835323
-  ======================================-->
+
 	 <section class="sidebar">
 
 		<ul class="sidebar-menu">
@@ -115,7 +111,7 @@ echo '<li class="treeview">
 	  <a href="clientes">
 							
 	
-	  <button class="btn btn-primary  btn-xs btn-block" data-toggle="modal" href="clientes">
+	  <button class="btn btn-primary  btn-xs btn-block" data-toggle="modal" href="estilodevida">
           
 	  Datos Generales
 
@@ -158,20 +154,35 @@ Clínico
 Signos Vitales
 
 </button>
-
-<button class="btn btn-primary btn-xs btn-block" data-toggle="modal" data-target="#SignosVitales">
+<a href="antropometria">
+<button class="btn btn-primary btn-xs btn-block" data-toggle="modal" href="antropometricos">
           
-Dietas
+Informacion Antropometicos
+
+</button>
+</a>
+
+<a href="clinicos">
+<button class="btn btn-primary  btn-xs btn-block" data-toggle="modal" href="clinicos">
+          
+Información Clinicos
 
 </button>
 
-
-
-<button class="btn btn-primary btn-xs btn-block" data-toggle="modal" data-target="#modalAgregarCliente">
-          
-Fotos del Paciente
+</a>
+<a href="bioquimicos">
+<button class="btn btn-primary  btn-xs btn-block" data-toggle="modal" href="bioquimicos">
+Información Bioquimicos
 
 </button>
+</a>
+
+<a href="signosvitales">
+<button class="btn btn-primary  btn-xs btn-block" data-toggle="modal" href="signosvitales">
+Información Signos Vitales
+
+</button>
+</a>
 		</li>
 
 	</ul>
@@ -301,34 +312,6 @@ Fotos del Paciente
 </div>
 
 
-<br>
-<div class="input-group">
-              
-			  <span class="input-group-addon"><i class="fa fa-th"></i></span> 
-
-			  <select class="form-control input-lg" id="nuevaCategoria" name="nuevaCategoria" required>
-				
-				<option value="">Selecionar Cita</option>
-
-				<?php
-
-				$item = null;
-				$valor = null;
-
-				$categorias = ControladorCategorias::ctrMostrarCategorias($item, $valor);
-
-				foreach ($categorias as $key => $value) {
-				  
-				  echo '<option value="'.$value["id"].'">'.$value["categoria"].'</option>';
-				}
-
-				?>
-
-			  </select>
-
-			</div>
-
-<br>
 
 <div class="input-group" >
 
@@ -383,7 +366,7 @@ Fotos del Paciente
  <br>
  <br>
 		&nbsp&nbsp&nbsp	&nbsp &nbsp&nbsp&nbsp&nbsp	&nbsp &nbsp&nbsp&nbsp&nbsp	&nbsp &nbsp&nbsp&nbsp&nbsp 	&nbsp &nbsp&nbsp&nbsp&nbsp	&nbsp &nbsp&nbsp&nbsp&nbsp 	&nbsp &nbsp&nbsp&nbsp&nbsp	&nbsp &nbsp&nbsp&nbsp&nbsp 	&nbsp &nbsp&nbsp&nbsp&nbsp	&nbsp &nbsp&nbsp&nbsp&nbsp
-		<button class="btn btn-warning btn-primary " data-toggle="modal" data-target="#miModal">
+		<button class="btn btn-primary  btn-xs btn-block" data-toggle="modal" href="clientes">
           
 		  Asociados con la Enfermedad
   
@@ -521,47 +504,12 @@ Datos Biquimicos
 &nbsp &nbsp&nbsp&nbsp&nbsp
 <button class="btn btn-primary btn-primary " data-toggle="modal" data-target="#Hematica">
           
-		  Biometria Hemática
+		  Realizar Encuesta
  
 	   </button>
 
     
 
-	   &nbsp &nbsp&nbsp&nbsp&nbsp
-
-<button class="btn btn-primary btn-primary " data-toggle="modal" data-target="#Sanguinea">
-          
-		Quimica Sanguinea
- 
-	   </button>
-
-	   &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp 
-	   <button class="btn btn-primary btn-primary" data-toggle="modal" data-target="#Electrolitos">
-          
-	Electrolitos
- 
-	   </button>
- <br>
- <br>
-
- &nbsp &nbsp&nbsp&nbsp&nbsp
-
-<button class="btn btn-primary btn-primary " data-toggle="modal" data-target="#Lipidos">
-   
-  Lípidos
- </button>
-	    &nbsp&nbsp&nbsp  &nbsp &nbsp&nbsp&nbsp&nbsp
-
-	   <button class="btn btn-primary btn-primary " data-toggle="modal" data-target="#Orina">
-          
-	Orina
-  
-		</button>
-
-		&nbsp &nbsp&nbsp&nbsp&nbsp  &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-
-
-		<br>
  <br>
       </div>
 	
@@ -1216,13 +1164,6 @@ Sintomas Gastrointestinales
 
 	  <br>
 
-<div class="input-group">
-		
-		<span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
-
-		<input type="text" class="form-control input-lg"  id="CF5" name="CF5" placeholder="Ingresar Actividades Fisicas" required>
-
-	  </div>
 
 	  <div class="modal-footer">
 
@@ -2000,6 +1941,61 @@ Antropometria Basico
 <div class="input-group" >
 
       </div>
+
+	  <div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+
+			  <select class="form-control input-lg" id="Cita" name="Cita" required>
+				
+				<option value="">Selecionar Cita</option>
+
+				<?php
+
+				$item = null;
+				$valor = null;
+
+				$categorias = ControladorCategorias::ctrMostrarCategorias($item, $valor);
+
+				foreach ($categorias as $key => $value) {
+				  
+				  echo '<option value="'.$value["categoria"].'">'.$value["categoria"].'</option>';
+				}
+
+				?>
+
+			  </select>
+
+			</div>
+
+<br>
+
+<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-th"></i></span> 
+
+			  <select class="form-control input-lg" id="Paciente" name="Paciente" required>
+				
+				<option value="">Selecionar Nombre del Paciente</option>
+
+				<?php
+
+				$item = null;
+				$valor = null;
+
+				$clientes = ControladorClientes::ctrMostrarClientes($item, $valor);
+
+				foreach ($clientes as $key => $value) {
+				  
+				  echo '<option value="'.$value["nombre"].'">'.$value["nombre"].'</option>';
+				}
+
+				?>
+
+			  </select>
+
+			</div>
+
 <br>
 	  <div class="input-group">
               
@@ -2432,16 +2428,31 @@ Qumica Sanguinea
 
 <form role="form" method="post">
 
-<div class="modal fade" id="Sanguinea" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+
+
+
+<!----==========================
+Biometría  Hemática
+==============================-->
+
+<div class="modal fade" id="Hematica" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
+
+
+	
 		<div class="modal-content">
+
+
+		
 		<div class="modal-header" style="background:#3c8dbc; color:white">
 
 <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-<h4 class="modal-title">Quimica Sanguinea</h4>
+<h4 class="modal-title">Encuesta Bioquimicos</h4>
 
 </div>
+
 
 <br>
 
@@ -2452,97 +2463,68 @@ Qumica Sanguinea
 
 	
 <br>
-	  
 
-	  <div class="input-group">
+<div class="input-group">
               
-			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
+			  <span class="input-group-addon"><i class="fa fa-th"></i></span> 
 
-			  <input type="text" class="form-control input-lg"  id="B1" name="B1" placeholder="Glucosa en ayuno Valor mg/dl Rango 65-100" required>
+			  <select class="form-control input-lg" id="Cita" name="Cita" required>
+				
+				<option value="">Selecionar Cita</option>
+
+				<?php
+
+				$item = null;
+				$valor = null;
+
+				$categorias = ControladorCategorias::ctrMostrarCategorias($item, $valor);
+
+				foreach ($categorias as $key => $value) {
+				  
+				  echo '<option value="'.$value["categoria"].'">'.$value["categoria"].'</option>';
+				}
+
+				?>
+
+			  </select>
 
 			</div>
 
+<br>
 
-			<div class="input-group">
+<div class="input-group">
               
-			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
+			  <span class="input-group-addon"><i class="fa fa-th"></i></span> 
 
-			  <input type="text" class="form-control input-lg" id="B2" name="B2"  placeholder="Glucosa 1 Hora despues de la ingesta mg/dl 110-135" required>
+			  <select class="form-control input-lg" id="Paciente" name="Paciente" required>
+				
+				<option value="">Selecionar Nombre del Paciente</option>
+
+				<?php
+
+				$item = null;
+				$valor = null;
+
+				$clientes = ControladorClientes::ctrMostrarClientes($item, $valor);
+
+				foreach ($clientes as $key => $value) {
+				  
+				  echo '<option value="'.$value["nombre"].'">'.$value["nombre"].'</option>';
+				}
+
+				?>
+
+			  </select>
 
 			</div>
 
-			<div class="input-group">
-              
-			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
-
-			  <input type="text" class="form-control input-lg"  id="B3" name="B3" placeholder="Glucosa 2 horas despues de la ingesta mg/dl 70-120" required>
-
-			</div>
-
-			<div class="input-group">
-              
-			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
-
-			  <input type="text" class="form-control input-lg"  id="B4" name="B4"  placeholder="Hemoglobina glucosilada (HbAlc) % 5-6" required>
-
-			</div>
-
-
-			<div class="input-group">
-              
-			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
-
-			  <input type="text" class="form-control input-lg"  id="B5" name="B5" placeholder="Creatina mg/dl 0.6 - 12" required>
-
-			</div>
-
-			<div class="input-group">
-              
-			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
-
-			  <input type="text" class="form-control input-lg" id="B6" name="B6" placeholder="Ulea mg/dl 10-40" required>
-
-			</div>
-
-			<div class="input-group">
-              
-			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
-
-			  <input type="text" class="form-control input-lg"  id="B7" name="B7" placeholder="BUN mg/dl  6-20" required>
-
-			</div>
-
-			<div class="input-group">
-              
-			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
-
-			  <input type="text" class="form-control input-lg"  id="B8" name="B8" placeholder="Albumina g/dl 35-5" required>
-
-			</div>
-
-
-<!----==========================
-Bioquimicos Electrolitos
-==============================-->	
-
-
-<div class="modal-header" style="background:#3c8dbc; color:white">
+			<div class="modal-header" style="background:#3c8dbc; color:white">
 
 <button type="button" class="close" data-dismiss="modal">&times;</button>
 
 <h4 class="modal-title">Electrolitos</h4>
 
 </div>
-
-<br>
-
-<div class="input-group" >
-
-
-      </div>
-
-	
-<br>
 	  
 
 	  <div class="input-group">
@@ -2579,39 +2561,8 @@ Bioquimicos Electrolitos
 			</div>
 
 			<BR>
-
-<!----==========================
-Biometría  Hemática
-==============================-->
-
-		
-
-			<div class="modal-footer">
-
-<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
-
-<button type="submit" class="btn btn-primary  background-color: #8064A2">Guardar Datos</button>
-
-</div>
-
-	
-		</div>
-	</div>
-</div>
-
-
-
-
-
-
-<!----==========================
-Biometría  Hemática
-==============================-->
-
-<div class="modal fade" id="Hematica" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
 		<div class="modal-header" style="background:#3c8dbc; color:white">
+
 
 <button type="button" class="close" data-dismiss="modal">&times;</button>
 
@@ -2621,10 +2572,6 @@ Biometría  Hemática
 
 <br>
 
-<div class="input-group" >
-
-
-      </div>
 
 	
 <br>
@@ -2726,7 +2673,7 @@ Biometría  Hemática
 
 <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-<h4 class="modal-title">Biometría Hemática</h4>
+<h4 class="modal-title">Quimica Sanguinea</h4>
 
 </div>
 
@@ -2737,15 +2684,12 @@ Biometría  Hemática
 
       </div>
 
-	
-<br>
 	  
-
 	  <div class="input-group">
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" id="B25" name="B25" placeholder="Eritrocitos M/NL  4.2 - 6.2" required>
+			  <input type="text" class="form-control input-lg"  id="B1" name="B1" placeholder="Glucosa en ayuno Valor mg/dl Rango 65-100" required>
 
 			</div>
 
@@ -2754,7 +2698,7 @@ Biometría  Hemática
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg"  id="B26" name="B26" placeholder="Concentración de Hemoglobina g/dl 14-17" required>
+			  <input type="text" class="form-control input-lg" id="B2" name="B2"  placeholder="Glucosa 1 Hora despues de la ingesta mg/dl 110-135" required>
 
 			</div>
 
@@ -2762,7 +2706,7 @@ Biometría  Hemática
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" id="B27" name="B27" placeholder="Hematocrito mg/dl  37-47" required>
+			  <input type="text" class="form-control input-lg"  id="B3" name="B3" placeholder="Glucosa 2 horas despues de la ingesta mg/dl 70-120" required>
 
 			</div>
 
@@ -2770,40 +2714,7 @@ Biometría  Hemática
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" id="B28" name="B28" placeholder="Volumen Corpuscular Medio fl 90-99" required>
-
-			</div>
-
-
-			<div class="input-group">
-              
-			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
-
-			  <input type="text" class="form-control input-lg" id="B29" name="B29" placeholder="Hemoglobina Corpuscular Medio fl 90-99" required>
-
-			</div>
-
-			<div class="input-group">
-              
-			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
-
-			  <input type="text" class="form-control input-lg" id="B30" name="B30" placeholder="Leucocitos k/NL 4.8- 11.8" required>
-
-			</div>
-
-			<div class="input-group">
-              
-			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
-
-			  <input type="text" class="form-control input-lg" id="B31" name="B31" placeholder="Linfoncitos %M  4-8" required>
-
-			</div>
-
-			<div class="input-group">
-              
-			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
-
-			  <input type="text" class="form-control input-lg" id="B32" name="B32" placeholder="Eosinfolios %E  0.5 - 4" required>
+			  <input type="text" class="form-control input-lg"  id="B4" name="B4"  placeholder="Hemoglobina glucosilada (HbAlc) % 5-6" required>
 
 			</div>
 
@@ -2812,16 +2723,7 @@ Biometría  Hemática
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" id="B33" name="B33" placeholder="Basófilos  %B  0 - 1.5" required>
-
-			</div>
-
-
-			<div class="input-group">
-              
-			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
-
-			  <input type="text" class="form-control input-lg" id="B34" name="B34" placeholder="Neutrofilos segmentados %NS  60 - 65" required>
+			  <input type="text" class="form-control input-lg"  id="B5" name="B5" placeholder="Creatina mg/dl 0.6 - 12" required>
 
 			</div>
 
@@ -2829,15 +2731,31 @@ Biometría  Hemática
               
 			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
-			  <input type="text" class="form-control input-lg" id="B35" name="B35" placeholder="Plaquetas k/NL   150,000 a 400,000" required>
+			  <input type="text" class="form-control input-lg" id="B6" name="B6" placeholder="Ulea mg/dl 10-40" required>
 
 			</div>
 
-			<!----==========================
-                  Lipidos
-            ==============================-->
+			<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
 
+			  <input type="text" class="form-control input-lg"  id="B7" name="B7" placeholder="BUN mg/dl  6-20" required>
 
+			</div>
+
+			<div class="input-group">
+              
+			  <span class="input-group-addon"><i class="fa fa-gratipay" aria-hidden="true"></i></span> 
+
+			  <input type="text" class="form-control input-lg"  id="B8" name="B8" placeholder="Albumina g/dl 35-5" required>
+
+			</div>
+
+	
+<br>
+	  
+
+	  
 			<div class="modal-header" style="background:#3c8dbc; color:white">
 
 <button type="button" class="close" data-dismiss="modal">&times;</button>

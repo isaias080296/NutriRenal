@@ -57,9 +57,10 @@ if($_SESSION["perfil"] == "Vendedor"){
          <tr>
            
            <th style="width:10px">#</th>
-           <th>Fecha</th>
            <th>Paciente</th>
-           <th>Tipo de Cita</th>
+           <th>Motivo</th>
+           <th>Fecha</th>
+           <th>Costo</th>
            <th>Acciones</th>
 
          </tr> 
@@ -81,7 +82,10 @@ if($_SESSION["perfil"] == "Vendedor"){
 
                     <td>'.($key+1).'</td>
 
+                    <td class="text-uppercase">'.$value["Fecha1"].'</td>
                     <td class="text-uppercase">'.$value["categoria"].'</td>
+                    <td class="text-uppercase">'.$value["fecha"].'</td>
+                    <td class="text-uppercase">'.$value["Costo"].'</td>
 
                     <td>
 

@@ -109,7 +109,7 @@ static public function mdlIngresarCapacidadF($tabla, $datos){
 MOSTRAR CATEGORIAS
 =============================================*/
 
-static public function mdlMostrarCategorias($tabla, $item, $valor){
+static public function mdlMostrarCapacidadf($tabla, $item, $valor){
 
     if($item != null){
 
@@ -167,7 +167,7 @@ static public function mdlEditarCategoria($tabla, $datos){
 BORRAR CATEGORIA
 =============================================*/
 
-static public function mdlBorrarCategoria($tabla, $datos){
+static public function mdlBorrarCapacidadF($tabla, $datos){
 
     $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id = :id");
 

@@ -148,8 +148,12 @@ CUERPO DOCUMENTO
          $_GET["ruta"] == "clientes" ||
          $_GET["ruta"] == "ventas" ||
          $_GET["ruta"] == "datos" ||
+         $_GET["ruta"] == "signosvitales" ||
          $_GET["ruta"] == "crear-venta" ||
-         $_GET["ruta"] == "estilodevida" ||
+         $_GET["ruta"] == "estilosdevida" ||
+         $_GET["ruta"] == "antropometria" ||
+         $_GET["ruta"] == "clinicos" ||
+         $_GET["ruta"] == "bioquimicos" ||
          $_GET["ruta"] == "editar-venta" ||
          $_GET["ruta"] == "menuclientes" ||
          $_GET["ruta"] == "reportes" ||

@@ -154,11 +154,11 @@ static public function ctrCrearCapacidadF(){
 MOSTRAR CATEGORIAS
 =============================================*/
 
-static public function ctrMostrarCategorias($item, $valor){
+static public function ctrMostrarCapacidadf($item, $valor){
 
-    $tabla = "categorias";
+    $tabla = "capacidadf";
 
-    $respuesta = ModeloCategorias::mdlMostrarCategorias($tabla, $item, $valor);
+    $respuesta = ModeloCapacidadF::mdlMostrarCapacidadf($tabla, $item, $valor);
 
     return $respuesta;
 
@@ -232,14 +232,14 @@ static public function ctrEditarCategoria(){
 BORRAR CATEGORIA
 =============================================*/
 
-static public function ctrBorrarCategoria(){
+static public function ctrBorrarCapacidadF(){
 
     if(isset($_GET["idCategoria"])){
 
-        $tabla ="Categorias";
-        $datos = $_GET["idCategoria"];
+        $tabla ="capacidadf";
+        $datos = $_GET["id"];
 
-        $respuesta = ModeloCategorias::mdlBorrarCategoria($tabla, $datos);
+        $respuesta = ModeloCapacidadF::mdlBorrarCapacidadF($tabla, $datos);
 
         if($respuesta == "ok"){
 
@@ -253,7 +253,7 @@ static public function ctrBorrarCategoria(){
                       }).then(function(result){
                                 if (result.value) {
 
-                                window.location = "categorias";
+                                window.location = "estilosdevida";
 
                                 }
                             })

@@ -60,6 +60,9 @@ static public function ctrCrearAntropometria(){
                            "AD10"=>$_POST["AD10"],
                            "AD11"=>$_POST["AD11"],
 
+                           "Cita"=>$_POST["Cita"],
+                           "Paciente"=>$_POST["Paciente"],
+
                            );
 
                $respuesta = ModeloAntropometria::mdlIngresarAntropometria($tabla, $datos);
@@ -117,11 +120,11 @@ static public function ctrCrearAntropometria(){
 MOSTRAR CATEGORIAS
 =============================================*/
 
-static public function ctrMostrarCategorias($item, $valor){
+static public function ctrMostrarAntropometria($item, $valor){
 
-    $tabla = "categorias";
+    $tabla = "antropometria";
 
-    $respuesta = ModeloCategorias::mdlMostrarCategorias($tabla, $item, $valor);
+    $respuesta = ModeloAntropometria::mdlMostrarAntropometria($tabla, $item, $valor);
 
     return $respuesta;
 
@@ -199,7 +202,7 @@ static public function ctrBorrarCategoria(){
 
     if(isset($_GET["idCategoria"])){
 
-        $tabla ="Categorias";
+        $tabla ="antropometria";
         $datos = $_GET["idCategoria"];
 
         $respuesta = ModeloCategorias::mdlBorrarCategoria($tabla, $datos);

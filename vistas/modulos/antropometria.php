@@ -3,7 +3,9 @@
 if($_SESSION["perfil"] == "Especial"){
 
   echo '<script>
+
     window.location = "inicio";
+
   </script>';
 
   return;
@@ -18,7 +20,7 @@ if($_SESSION["perfil"] == "Especial"){
     
     <h1>
       
-      Administrar clientes
+      Administrar clientes Antropometria
     
     </h1>
 
@@ -26,7 +28,7 @@ if($_SESSION["perfil"] == "Especial"){
       
       <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
       
-      <li class="active">Administrar clientes</li>
+      <li class="active">Administrar clientes Antropometria</li>
     
     </ol>
 
@@ -36,15 +38,7 @@ if($_SESSION["perfil"] == "Especial"){
 
     <div class="box">
 
-      <div class="box-header with-border">
-  
-        <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarCliente">
-          
-          Agregar cliente
-
-        </button>
-    
-      </div>
+   
 
       <div class="box-body">
         
@@ -55,23 +49,49 @@ if($_SESSION["perfil"] == "Especial"){
          <tr>
            
            <th style="width:10px">#</th>
-           <th>Nombre</th>
-           <th>Cliente de</th>
-           <th>Documento ID</th>
-           <th>Email</th>
-           <th>Teléfono</th>
-           <th>Dirección</th> 
-           <th>Total de citas</th>
-           <th>Última cita</th>
-           <th>Ingreso al sistema</th>
-           <th>Diagnostico Médico</th>
-           <th>Nombre del Contacto</th>
-           <th>Puesto o Cargo</th>
-           <th>email del contacto</th>
-           <th>Telefono fijo</th>
-           <th>Telefono celular</th>
-           <th>Comentarios</th>
-           <th>Acciones</th>
+           
+           <th>Paciente</th>
+           <th>Cita</th>
+           <th>Estatura</th>
+           <th>Grasas en sección superior %</th>
+           <th>Grasas en Sección Inferior %</th>
+           <th>Grasas Viserales (Roting)</th>
+           <th>Masa Libre de Grasa KG</th>
+           <th>Masa Muscular KG</th> 
+           <th>Peso Óseo</th>
+           <th>Edad Metabólica</th>
+           <th>Peso Actual</th>
+           <th>Peso Habitual</th>
+           <th>Peso Teórico</th>
+           <th>Peso Predialisis</th>
+           <th>Peso Seco</th>
+           <th>Peso Corregido por eclema</th>
+           <th>Cafálico cm </th>
+           <th>Cuello cm</th>
+           <th>Mitad de Brazo Relajado cm</th>
+           <th>Mitad de Brazo Contraido cm</th>
+           <th>Antebrazo cm</th>
+           <th>Muñeca cm</th>
+           <th>Meso Esternal cm</th>
+           <th>Umbilical cm</th>
+           <th>Cintura cm</th>
+           <th>Cadera cm</th>
+           <th>Muslo cm</th>
+           <th>Muslo Medio cm</th>
+           <th>Pantorrilla cm</th>
+           <th>Tobillo cm</th>
+           <th>Briacromial cm</th>
+           <th>Bileocrestal cm</th>
+           <th>Longitud de Pie cm</th>
+           <th>Transvero de tórax cm</th>
+           <th>Antero posterior de Torax cm</th>
+           <th>Bi Epicóndilo del Húmero cm</th>
+           <th>Bi Estiloides de la Muñeca cm</th>
+           <th>Bi Maleolar cm</th>
+           <th>Transverso de Pie cm</th>
+           <th>Longitud de Manos cm</th>
+           <th>Transverso de la Mano cm</th>
+           <th>Opciones</th>
          </tr> 
 
         </thead>
@@ -83,43 +103,63 @@ if($_SESSION["perfil"] == "Especial"){
           $item = null;
           $valor = null;
 
-          $clientes = ControladorClientes::ctrMostrarClientes($item, $valor);
+          $clientes = ControladorAntropometria::ctrMostrarAntropometria($item, $valor);
 
           foreach ($clientes as $key => $value) {
             
 
             echo '<tr>
+
                      <td>'.($key+1).'</td>
-                    <td>'.$value["nombre"].'</td>
-                    <td>'.$value["cliente"].'</td>
-                    <td>'.$value["documento"].'</td>
-                    <td>'.$value["puestoCargo"].'</td>
-                    <td>'.$value["email"].'</td>
-                    <td>'.$value["telefono"].'</td>
-                    <td>'.$value["direccion"].'</td>
-                    <td>'.$value["compras"].'</td>
-                    <td>'.$value["ultima_compra"].'</td>
-                    <td>'.$value["fecha"].'</td>
-                    <td>'.$value["paginaweb"].'</td>
-                    <td>'.$value["nombreContacto"].'</td>
-                    <td>'.$value["emailcontacto"].'</td>
-                    <td>'.$value["telefonofijocontacto"].'</td>
-                    <td>'.$value["telefonocelularcontacto"].'</td>
-                    <td>'.$value["comentarios"].'</td>
-                 
-                    <td>
-                      <div class="btn-group">
-                          
-                        <button class="btn btn-warning btnEditarCliente" data-toggle="modal" data-target="#modalEditarCliente" idCliente="'.$value["id"].'"><i class="fa fa-pencil"></i></button>';
 
-                      if($_SESSION["perfil"] == "Administrador"){
+                     <td>'.$value["Paciente"].'</td>
 
-                          echo '<button class="btn btn-danger btnEliminarCliente" idCliente="'.$value["id"].'"><i class="fa fa-times"></i></button>';
+                     <td>'.$value["Cita"].'</td>
 
-                      }
+                    <td>'.$value["AB1"].'</td>
 
-                      echo '</div>  
+                    <td>'.$value["AB2"].'</td>
+
+                    <td>'.$value["AB3"].'</td>
+
+                    <td>'.$value["AB4"].'</td>
+
+                    <td>'.$value["AB5"].'</td>
+
+                    <td>'.$value["AB6"].'</td>
+
+                    <td>'.$value["AB7"].'</td>
+
+                    <td>'.$value["AB8"].'</td>
+                    <td>'.$value["AB11"].'</td>
+                    <td>'.$value["AB22"].'</td>
+                    <td>'.$value["AB33"].'</td>
+                    <td>'.$value["AB44"].'</td>
+                    <td>'.$value["AB55"].'</td>
+                    <td>'.$value["AB66"].'</td>
+                    <td>'.$value["AB77"].'</td>
+                    <td>'.$value["AB88"].'</td>
+                    <td>'.$value["AP1"].'</td>
+                    <td>'.$value["AP2"].'</td>
+                    <td>'.$value["AP3"].'</td>
+                    <td>'.$value["AP4"].'</td>
+                    <td>'.$value["AP5"].'</td>
+                    <td>'.$value["AP6"].'</td>
+                    <td>'.$value["AP7"].'</td>
+                    <td>'.$value["AP8"].'</td>
+                    <td>'.$value["AP9"].'</td>
+                    <td>'.$value["AP10"].'</td>
+                    <td>'.$value["AP11"].'</td>
+                    <td>'.$value["AP12"].'</td>
+                    <td>'.$value["AP13"].'</td>
+                    <td>'.$value["AP14"].'</td>
+
+                     <td>
+
+                    
+
                     </td>
+
                   </tr>';
           
             }
@@ -137,7 +177,6 @@ if($_SESSION["perfil"] == "Especial"){
   </section>
 
 </div>
-
 <!--=====================================
 MODAL AGREGAR CLIENTE
 ======================================-->
@@ -188,15 +227,21 @@ MODAL AGREGAR CLIENTE
             
             <div class="form-group">
               
-
-            <div class="input-group">
+              <div class="input-group">
               
-              <span class="input-group-addon"><i class="fa fa-user"></i></span> 
-
-              <input type="text" class="form-control input-lg" name="rfc" placeholder="Ingresar nombre del Pacientes" required>
+                <span class="input-group-addon"><i class="fa fa-th"></i></span>
+              
+                <select class="form-control input-lg" id="cliente" name="cliente" required>
+                  <option value="">Diagnostico Medico</option>
+               
+                  <option value="Intamex">1</option>
+                  <option value="Pancale">2</option>
+                  <option value="Pancale">3</option>
+                  <option value="MansionMex">4</option>
+                  <option value="TecnoCompraz">5</option>
+                </select>
 
             </div>
-            
 
             </div>
 
@@ -922,7 +967,9 @@ a
 
 <?php
 
-  $eliminarCliente = new ControladorClientes();
-  $eliminarCliente -> ctrEliminarCliente();
+  $eliminarAntropometria = new ControladorAntropometria();
+  $eliminarAntropometria -> ctrEliminarAntropometria();
 
 ?>
+
+

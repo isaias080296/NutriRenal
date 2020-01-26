@@ -96,11 +96,11 @@ static public function ctrCrearSignoss(){
 MOSTRAR CATEGORIAS
 =============================================*/
 
-static public function ctrMostrarCategorias($item, $valor){
+static public function ctrMostrarSignoss($item, $valor){
 
-    $tabla = "categorias";
+    $tabla = "signos";
 
-    $respuesta = ModeloCategorias::mdlMostrarCategorias($tabla, $item, $valor);
+    $respuesta = ModeloSigno::mdlMostrarSignoss($tabla, $item, $valor);
 
     return $respuesta;
 
